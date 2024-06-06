@@ -1,7 +1,7 @@
-const User = require('../models/User')
-const Role = require('../models/Role')
-const UserDto = require('../dtos/userDto')
-const ApiError = require('../exceptions/api-error')
+const User = require('../../models/User')
+const Role = require('../../models/Role')
+const UserDto = require('../../dtos/userDto')
+const ApiError = require('../../exceptions/api-error')
 const tokenService = require('./tokenService')
 const mailService = require('./mailService')
 const bcrypt = require('bcrypt')
@@ -79,6 +79,60 @@ class AuthService {
     async users() { 
         const users = await User.findAll()
         return users
+    }
+    async destroyUser(email, password, refreshToken) {                              // стоит ли проверять, если и так отрабатывает checkIsAuth ??? 
+        const user = await User.findOne({where:{email:email}})
+        if(!user) { 
+            throw ApiError.BadRequest('Пользователь с таким email не найден')
+        }
+        const isPassEquals = await bcrypt.compare(password, user.password)
+        if(!isPassEquals) { 
+            throw ApiError.BadRequest('Неверный пароль')
+        }
+        await tokenService.removeToken(refreshToken)
+        await User.destroy({where:{email:email}})
+        return 'user destroyed'
+    }
+    async destroyUserFromAdm(email, refreshToken) {                              // стоит ли проверять, если и так отрабатывает checkIsAuth ??? 
+        const user = await User.findOne({where:{email:email}})
+        if(!user) { 
+            throw ApiError.BadRequest('Пользователь с таким email не найден')
+        }
+        const id = user.id
+        await tokenService.removeTokenFromAdm(id)
+        await User.destroy({where:{email:email}})
+        return 'user destroyed by admin'
+    }
+    async changeUsername(email, password, newUsername) { 
+        const user = await User.findOne({where:{email:email}})
+        if(!user) { 
+            throw ApiError.BadRequest('Пользователь с таким email не найден')
+        }
+        const isPassEquals = await bcrypt.compare(password, user.password)
+        if(!isPassEquals) { 
+            throw ApiError.BadRequest('Неверный пароль')
+        }
+
+        user.username = newUsername
+        await user.save()
+
+        return ({user})
+    }
+    async changePassword(email, password, newPassword) { 
+        const user = await User.findOne({where:{email:email}})
+        if(!user) { 
+            throw ApiError.BadRequest('Пользователь с таким email не найден')
+        }
+        const isPassEquals = await bcrypt.compare(password, user.password)
+        if(!isPassEquals) { 
+            throw ApiError.BadRequest('Неверный пароль')
+        }
+        const hashNewPassword = await bcrypt.hash(newPassword, 3)
+
+        user.password = hashNewPassword
+        await user.save()
+
+        return ({user})
     }
 }
 

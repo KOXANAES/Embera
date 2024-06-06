@@ -1,9 +1,9 @@
 const jwt = require('jsonwebtoken')
-const Token = require('../models/Token')
+const Token = require('../../models/Token')
 class TokenService { 
     generateTokens(payload) { 
-        const accessToken = jwt.sign(payload, process.env.ACCESS_SECRET, {expiresIn:'15m'})
-        const refreshToken = jwt.sign(payload, process.env.REFRESH_SECRET, {expiresIn:'30m'})
+        const accessToken = jwt.sign(payload, process.env.ACCESS_SECRET, {expiresIn:'1h'})
+        const refreshToken = jwt.sign(payload, process.env.REFRESH_SECRET, {expiresIn:'3h'})
         return { 
             accessToken, 
             refreshToken
@@ -39,6 +39,13 @@ class TokenService {
     }
     async removeToken(refreshToken) { 
         const tokenData = await Token.destroy({where:{refreshToken:refreshToken}})
+        return tokenData
+    }
+    async removeTokenFromAdm(id) { 
+        const token = await Token.findOne({where:{user:id}})
+        const tokenId = token.dataValues.id
+        console.log(tokenId)
+        const tokenData = await Token.destroy({where:{id:tokenId}})
         return tokenData
     }
     async findToken(refreshToken) { 

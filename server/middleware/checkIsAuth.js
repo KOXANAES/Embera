@@ -1,4 +1,4 @@
-const tokenService = require('../services/tokenService')
+const tokenService = require('../services/auth_services/tokenService')
 const ApiError = require('../exceptions/api-error')
 
 module.exports = checkIsAuth = (req) => {  

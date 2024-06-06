@@ -17,8 +17,20 @@ authRouter.post('/login', authController.login)
 authRouter.post('/logout', authController.logout)
 authRouter.get('/activate/:link', authController.activate)
 authRouter.get('/refresh', authController.refresh)
-authRouter.get('/users', authMiddleware, activatedMiddleware, roleMiddleware(['ADMIN']), authController.users)
+
+
+// функция - костыль для создания ролей рользователя при первом запуске приложения (с пустой БД)
+
 authRouter.get('/createUserRoles', authController.createUserRoles)
 
+authRouter.get('/users', authMiddleware, activatedMiddleware, roleMiddleware(['ADMIN']), authController.users)
+authRouter.put('/destroyUserFromAdm', authMiddleware, activatedMiddleware, roleMiddleware(['ADMIN']), authController.destroyUserFromAdm)
 
+authRouter.put('/destroyUser', authMiddleware, authController.destroyUser)
+authRouter.put('/changeUsername', authMiddleware, authController.changeUsername)
+authRouter.put('/changePassword', authMiddleware, authController.changePassword)    
+
+
+// поменять почту 
+// поменять пароль
 module.exports = authRouter

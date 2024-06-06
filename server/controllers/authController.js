@@ -1,7 +1,8 @@
 const Role = require('../models/Role') // just for creating roles
-const authService = require('../services/authService')
+const authService = require('../services/auth_services/authService')
 const {validationResult} = require('express-validator')
 const ApiError = require('../exceptions/api-error')
+const User = require('../models/User')
 class AuthController { 
     async registration(req,res,next) { 
         try { 
@@ -76,6 +77,44 @@ class AuthController {
             await userRole.save()
             await adminRole.save()
             res.json('roles are created')
+        } catch(e) { 
+            next(e)   
+        }
+    }
+    async destroyUser(req,res,next) { 
+        try { 
+            const {refreshToken} = req.cookies
+            const {email, password} = req.body
+            const response = await authService.destroyUser(email, password, refreshToken)
+            res.clearCookie('refreshToken')
+            res.json(response)
+        } catch(e) { 
+            next(e)   
+        }
+    }
+    async destroyUserFromAdm(req,res,next) { 
+        try { 
+            const {email} = req.body
+            const response = await authService.destroyUserFromAdm(email)
+            res.json(response)
+        } catch(e) { 
+            next(e)   
+        }
+    }
+    async changeUsername(req,res,next) { 
+        try { 
+            const {email, password, newUsername} = req.body
+            const userData = await authService.changeUsername(email, password, newUsername)
+            return res.json(userData)
+        } catch(e) { 
+            next(e)   
+        }
+    }
+    async changePassword(req,res,next) { 
+        try { 
+            const {email, password, newPassword} = req.body
+            const userData = await authService.changePassword(email, password, newPassword)
+            return res.json(userData)
         } catch(e) { 
             next(e)   
         }

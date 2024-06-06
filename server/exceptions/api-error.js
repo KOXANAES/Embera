@@ -20,6 +20,10 @@ module.exports = class ApiError extends Error {
         return new ApiError(404, 'Произошла непредвиденная ошибка')
     }
 
+    static InitialParamsCalcError() { 
+        return new ApiError(404, 'Указаны не все параметры для выполнения запроса')
+    }
+
     static BadRequest(message, errors = []) { 
         return new ApiError(400, message, errors)   
     }

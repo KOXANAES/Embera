@@ -8,6 +8,6 @@ const roleMiddleware = require('../middleware/roleMiddleware')
 
 const calcRouter = new Router()
 
-calcRouter.post('/testcalc', calcController.testcalc)
+calcRouter.post('/tvipg_1', activatedMiddleware, activatedMiddleware, calcController.tvipg_1)
 
 module.exports = calcRouter
