@@ -15,7 +15,6 @@ class MailService {
             }
         )
     }
-
     async sendActivationMail(to, link) { 
         await this.transporter.sendMail({ 
             from: process.env.SMTP_USER,
@@ -29,6 +28,17 @@ class MailService {
                         <a href='${link}'>${link}</a>
                     </div>
                 `
+        })
+    }
+    async sendTechHelpMessage(adminEmail, message, UserEmail) { 
+        await this.transporter.sendMail({ 
+            from: process.env.SMTP_USER,
+            to:adminEmail, 
+            subject: 'ТЕХНИЧЕСКАЯ ПОДДЕРЖКА САЙТА',
+            text: `
+            Отправитель: ${UserEmail}
+            ${message}
+            `,
         })
     }
 }

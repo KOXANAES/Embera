@@ -1,13 +1,13 @@
 const Router = require('express')
 
-const calcController = require('../controllers/calcController')
+const techController = require('../controllers/techController')
 
 const authMiddleware = require('../middleware/authMiddleware')
 const activatedMiddleware = require('../middleware/activatedMiddleware')
 const roleMiddleware = require('../middleware/roleMiddleware')
 
-const calcRouter = new Router()
+const techRouter = new Router()
 
-calcRouter.post('/tvipg_1', authMiddleware, activatedMiddleware, calcController.tvipg_1)
+techRouter.post('/help', authMiddleware, techController.help)
 
-module.exports = calcRouter
+module.exports = techRouter

@@ -43,6 +43,7 @@ class TokenService {
     }
     async removeTokenFromAdm(id) { 
         const token = await Token.findOne({where:{user:id}})
+        if(!token) return
         const tokenId = token.dataValues.id
         console.log(tokenId)
         const tokenData = await Token.destroy({where:{id:tokenId}})

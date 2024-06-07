@@ -98,7 +98,9 @@ class AuthService {
         if(!user) { 
             throw ApiError.BadRequest('Пользователь с таким email не найден')
         }
+
         const id = user.id
+        console.log(id)
         await tokenService.removeTokenFromAdm(id)
         await User.destroy({where:{email:email}})
         return 'user destroyed by admin'

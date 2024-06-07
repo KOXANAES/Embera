@@ -8,6 +8,7 @@ const cors = require('cors')
 const cookieParser = require('cookie-parser')
 const authRouter = require('./routers/authRouter')
 const calcRouter = require('./routers/calcRouter')
+const techRouter = require('./routers/techRouter')
 const errorMiddleware = require('./middleware/errorMiddleware')
 
 app.use(express.json())
@@ -18,6 +19,7 @@ app.use(cors({
 }))
 app.use('/auth', authRouter)
 app.use('/calc', calcRouter)
+app.use('/tech', techRouter)
 app.use(errorMiddleware)
 
 const start = async () => { 
