@@ -1,3 +1,5 @@
+const t3pr2 = require('./t3pr2')
+
 const tv_i_pg_pt_1 = (...params) => { 
     let [N, C, H, O, M, T, P, A, Q] = params
 
@@ -129,31 +131,35 @@ const tv_i_pg_pt_1 = (...params) => {
     const QobrH2O = 242.2
     const QobrCO2 = 396.9
     const Qn = +((n_C * QobrCO2 + n_H * QobrH2O) - n_V * Q).toFixed(1)
+    const QnMolKg = +((Qn * 1000) / MolM).toFixed(0)
+    const Qsr = +(QnMolKg / Vpg0A).toFixed(2) 
 
-    console.log(Qn)
-
-    // дописать
+    const Tburn = calcTburn()
+    function calcTburn() { 
+        let Qpgt2, Qpgt1
+        for(let i = 0; i <= 30; i++) { 
+            Qpgt2 = +(VCO20 * (t3pr2[i][3] * 100) + VH2O0 * (t3pr2[i][4] * 100) + VN20A * (t3pr2[i][1] * 100) + VO20A * (t3pr2[i][0] * 100)).toFixed(1)
+            if(Qpgt2 >= QnMolKg) { 
+                Qpgt1 = +(VCO20 * (t3pr2[i-1][3] * 100) + VH2O0 * (t3pr2[i-1][4] * 100) + VN20A * (t3pr2[i-1][1] * 100) + VO20A * (t3pr2[i-1][0] * 100)).toFixed(1)
+                const t2 = i * 100 
+                const t1 = t2 - 100
+                console.log(Qpgt1, QnMolKg, Qpgt2, t1, t2)
+                const Tburn = +(t1 + ((t2 - t1) * (QnMolKg - Qpgt1)) / (Qpgt2 - Qpgt1)).toFixed(1)
+                return Tburn
+            }
+        } 
+    }
+    const Qvzr = Qn
 
     return { 
         N:N, C:C, H:H, O:O, M:M, T:T, P:P, A:A, Q:Q,
-        n_V:n_V,
-        n_C:n_C,
-        n_H:n_H,
-        n_O2:n_O2,
-        n_N:n_N,
-        beta:beta,
-        MolM:MolM,
-        Vv0:Vv0,
-        VvTP:VvTP,
-        Vv0A:Vv0A,
-        VvTPA:VvTPA,
-        Vv0M:Vv0M,
-        VvTPM:VvTPM,
-        Vv0MA:Vv0MA,
-        VvTPMA:VvTPMA,
-        FiCO2:FiCO2,
-        FiH2O:FiH2O,
-        FiN2:FiN2,
+        n_V:n_V, n_C:n_C, n_H:n_H, n_O2:n_O2, n_N:n_N,
+        beta:beta, MolM:MolM,
+        Vv0:Vv0, VvTP:VvTP,
+        Vv0A:Vv0A, VvTPA:VvTPA,
+        Vv0M:Vv0M,VvTPM:VvTPM,
+        Vv0MA:Vv0MA, VvTPMA:VvTPMA,
+        FiCO2:FiCO2, FiH2O:FiH2O, FiN2:FiN2,
         Vpg0:Vpg0,
         VpgTP:VpgTP,
         VCO20:VCO20,
@@ -192,10 +198,9 @@ const tv_i_pg_pt_1 = (...params) => {
         VH2OTPAM:VH2OTPAM,
         VN2TPAM:VN2TPAM,
         VO2TPAM:VO2TPAM,
-        FiCO2A:FiCO2A,
-        FiH2OA:FiH2OA,
-        FiN2A:FiN2A,
-        FiO2A:FiO2A,
+        FiCO2A:FiCO2A, FiH2OA:FiH2OA, FiN2A:FiN2A, FiO2A:FiO2A,
+        Qn:Qn, QnMolKg:QnMolKg, Qsr:Qsr,
+        Tburn:Tburn
     }
 }
 
