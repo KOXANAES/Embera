@@ -15,9 +15,9 @@ class CalcController {
     }
     async tvipg_3(req,res,next) { 
         try {
-            const {N} = req.body   
-            if (!N) throw ApiError.InitialParamsCalcError()
-            const ans = tv_i_pg_pt_3(N)
+            const {N, Q, cond, H, meteo, temp, V, T, L} = req.body   
+            if (!N || !Q || !cond || !H || !meteo || !temp || !V || !T || !L) throw ApiError.InitialParamsCalcError()
+            const ans = tv_i_pg_pt_3(N, Q, cond, H, meteo, temp, V, T, L)
             return res.json(ans)
         } catch(e) { 
             next(e)

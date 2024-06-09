@@ -20,6 +20,10 @@ module.exports = class ApiError extends Error {
         return new ApiError(404, 'Произошла непредвиденная ошибка')
     }
 
+    static EmailError() { 
+        return new ApiError(404, 'Вы уже зарегистрированы на этом сервисе')
+    }
+
     static InitialParamsCalcError() { 
         return new ApiError(404, 'Указаны не все параметры для выполнения запроса')
     }

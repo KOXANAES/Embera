@@ -15,7 +15,13 @@ authRouter.post('/registration',
     authController.registration)
 authRouter.post('/login', authController.login)
 authRouter.post('/logout', authController.logout)
+
+
+authRouter.post('/sendMail', authMiddleware, authController.sendMail)
+
 authRouter.get('/activate/:link', authController.activate)
+
+
 authRouter.get('/refresh', authController.refresh)
 
 

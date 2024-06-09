@@ -18,6 +18,15 @@ class AuthController {
             next(e)
         } 
     }
+    async sendMail(req,res, next) { 
+        try { 
+            const {email, password} = req.body 
+            const userData = await authService.sendMail(email, password)
+            return res.json(userData)
+        } catch(e) { 
+            next(e)
+        }
+    }
     async activate(req,res, next) { 
         try { 
             const activationLink = req.params.link

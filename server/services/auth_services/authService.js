@@ -4,6 +4,7 @@ const UserDto = require('../../dtos/userDto')
 const ApiError = require('../../exceptions/api-error')
 const tokenService = require('./tokenService')
 const mailService = require('./mailService')
+const gMailService = require('./gmailService')
 const bcrypt = require('bcrypt')
 const uuid = require('uuid')
 
@@ -17,7 +18,7 @@ class AuthService {
         const activationLink = uuid.v4()
         const userRole = await Role.findOne({where:{value:"USER"}})
         const user = await User.create({email, username, password:hashPassword, activationLink, role:userRole.dataValues.value})  
-        await mailService.sendActivationMail(email, `${process.env.API_URL}/auth/activate/${activationLink}`)
+        // await mailService.sendActivationMail(email, `${process.env.API_URL}/auth/activate/${activationLink}`)
         const userDto = new UserDto(user)
         const tokens = tokenService.generateTokens({...userDto})
         await tokenService.saveToken(userDto.id, tokens.refreshToken)
@@ -25,6 +26,20 @@ class AuthService {
             ...tokens, 
             user: userDto
         }
+    }
+    async sendMail(email) {
+        const user = await User.findOne({where:{email:email}})
+        if(user.isActivated) throw ApiError.EmailError()
+        const mailTemplate = user.dataValues.email
+        const activationLink = user.dataValues.activationLink
+        console.log(activationLink)
+        if(mailTemplate.includes('@mail.ru')) {
+            await mailService.sendActivationMail(email, `${process.env.API_URL}/auth/activate/${activationLink}`)
+        }
+        if(mailTemplate.includes('@gmail.com')) {
+            await gMailService.sendActivationMail(email, `${process.env.API_URL}/auth/activate/${activationLink}`)
+        }
+        return 'activation link has been sended'
     }
     async activate(activationLink) { 
         const user = await User.findOne({where:{activationLink}})
