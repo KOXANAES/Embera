@@ -163,8 +163,6 @@ const tv_i_pg_pt_1 = (...params) => {
     const Tvsp = findTvsp()
     const Tprpn = +((AntB / (AntA - Math.log((Fin * p0) / 100))) - AntC).toFixed(1)
     const Tprpv = +((AntB / (AntA - Math.log((Fiv * p0) / 100))) - AntC).toFixed(1)
-
-
     return { 
         N:N, C:C, H:H, O:O, M:M, T:T, P:P, A:A, Q:Q,
         n_V:n_V, n_C:n_C, n_H:n_H, n_O2:n_O2, n_N:n_N,
