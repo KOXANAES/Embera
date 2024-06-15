@@ -1,15 +1,19 @@
+const calc_validator = require('../validator')
 const t2pr3 = require('./t2pr3')
 const t3pr3 = require('./t3pr3')
 const t4pr4 = require('./t4pr4')
 const t5pr5 = require('./t5pr5')
 const tv_i_pg_pt_3 = (...params) => { 
     let [N, Q, cond, rozl, H, meteo, temp, V, T, L] = params
-    V = +V
+    Q = +Q; H = +H; temp = +temp; V = +V; T = +T; L = +L
+    calc_validator.validate_pt3(N, Q, cond, rozl, H, meteo, temp, V, T, L)
+
                                                                                  // пока что только для жидкостей
     N = defineN()
     function defineN() { 
         for(let i = 0; i <= 50; i++) { 
             let tab = t2pr3[i][0]
+
             if(tab === N) { 
                 N = tab
                 RoZH = t2pr3[i][2]
@@ -213,7 +217,6 @@ const tv_i_pg_pt_3 = (...params) => {
                     if(V <= tablU) { 
                         if(j == 0) { 
                             const U = t5pr5[i][j+1]
-                            console.log(U)
                             return U
                         }
                         const RU = arrU[j]  
@@ -243,7 +246,6 @@ const tv_i_pg_pt_3 = (...params) => {
     const Sv = +(8.72 * (10 ** (-3)) * (endL**2) * Fi).toFixed(3)
     const Sf = +(K8 * (endL**2) * (T**.2)).toFixed(3)
     const t = +((L / U) * 60).toFixed(2) 
-    console.log(Fi)
     return {
         N:N, Q:Q, cond:cond, H:H, meteo:meteo, temp:temp, V:V, T:T, L:L,
         Qe1:Qe1, Qe2:Qe2, L1:L1, L2:L2, LE:LE, 

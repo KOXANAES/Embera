@@ -2,7 +2,6 @@ const Role = require('../models/Role') // just for creating roles
 const authService = require('../services/auth_services/authService')
 const {validationResult} = require('express-validator')
 const ApiError = require('../exceptions/api-error')
-const User = require('../models/User')
 class AuthController { 
     async registration(req,res,next) { 
         try { 

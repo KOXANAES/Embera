@@ -26,7 +26,6 @@ authRouter.get('/refresh', authController.refresh)
 
 
 // функция - костыль для создания ролей рользователя при первом запуске приложения (с пустой БД)
-
 authRouter.get('/createUserRoles', authController.createUserRoles)
 
 authRouter.get('/users', authMiddleware, activatedMiddleware, roleMiddleware(['ADMIN']), authController.users)

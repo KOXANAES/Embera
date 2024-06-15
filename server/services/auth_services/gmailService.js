@@ -23,7 +23,7 @@ class GMailService {
             text: '', 
             html: 
                 `
-                    <div>
+                    <div style="background-color: red;">
                         <h1>Для активации аккаунта перейдите по ссылке:</h1>
                         <a href='${link}'>${link}</a>
                     </div>

@@ -1,11 +1,12 @@
+const calc_validator = require('../validator')
 const t3pr2 = require('./t3pr2')
 const t4pr2 = require('./t4pr2')
 
 const tv_i_pg_pt_1 = (...params) => { 
     let [N, C, H, O, M, T, P, A, Q, D, AntA, AntB, AntC] = params
-
     C = +C; H = +H; O = +O; M = +M; T = +T; P = +P; A = +A; Q = +Q; D = +D; AntA = +AntA; AntB = +AntB; AntC = +AntC
- 
+    calc_validator.validate_pt1(N, C, H, O, M, T, P, A, Q, D, AntA, AntB, AntC)
+
     const n_V = 1
     const n_C = n_V * C
     const n_H = n_V * (H / 2)
@@ -152,9 +153,7 @@ const tv_i_pg_pt_1 = (...params) => {
         for(let t = -100; t <= 1000; t++) { 
             let pb = +(((10 ** (AntA - (AntB / (t + AntC)))) * 1000) * (t + 273)).toFixed(0)
             if(pb >= TP) { 
-                console.log(pb)
                 let pm = +(((10 ** (AntA - (AntB / ((t-1) + AntC)))) * 1000) * ((t-1) + 273)).toFixed(0)
-                console.log(pm)
                 let Tvsp = +(((t - 1) + 273) + ((TP - pm) / (pb - pm)) - 273).toFixed(1)
                 return Tvsp
             }
