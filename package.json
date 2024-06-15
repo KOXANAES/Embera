@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "mobx": "^6.12.4",
+    "mobx-react-lite": "^4.0.7"
+  }
+}
