@@ -1,15 +1,17 @@
 import { observer } from 'mobx-react-lite'
-import LoginForm from '../LoginForm/LoginForm'
+import LoginField from '../LoginField/LoginField'
 import './HorizontalNavbar.css'
-import Logo from '../UI/Logo/Logo'
+import Logo from '../Logo/Logo'
 import AuthInfo from '../AuthInfo/AuthInfo'
 
+
 const HorizontalNavbar = () => { 
+
   return(
     <div className="horizontalNavbar">
       <Logo/>
       <AuthInfo/>
-      <LoginForm/>
+      <LoginField/>
     </div>
   )
 }

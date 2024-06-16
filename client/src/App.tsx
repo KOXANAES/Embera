@@ -20,6 +20,8 @@ const App: FC = () => {
     )
   }
 
+
+
   return (
     <div>
       <HorizontalNavbar/>

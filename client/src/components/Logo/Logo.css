@@ -6,6 +6,7 @@
 }
 #logo_img { 
   width: 30px;
+  transition: filter 0.3s, box-shadow 0.3s;
 }
 #logo_name { 
   font-family: "Montserrat", sans-serif;

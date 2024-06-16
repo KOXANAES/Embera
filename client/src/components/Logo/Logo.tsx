@@ -1,5 +1,5 @@
 import './Logo.css'
-import logo from '../../../assets/fire.png'
+import logo from '../../assets/fire.png'
 const Logo = () => { 
   return(
     <div className="logo">

@@ -1,0 +1,30 @@
+.regForm { 
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0,0,0,.4);
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  pointer-events: none;
+  transition: .5s;
+}
+.regForm.active { 
+  opacity: 1;
+  pointer-events: all;
+}
+.regForm_content { 
+  padding: 20px;
+  border-radius: 20px;
+  background-color: white;
+  height: 50vh;
+  width: 50vw;
+  transform: scale(.5);
+  transition: .4s all;
+}
+.regForm_content.active { 
+  transform: scale(1);
+}

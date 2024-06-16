@@ -1,17 +1,24 @@
-import { FC, useContext, useState } from "react";
-import { Context } from "../../main";
-import { observer } from "mobx-react-lite";
+import { FC, useContext, useState } from 'react'
+import './LoginForm.css'
+import { Context } from '../../main'
 
-const LoginForm: FC = () => { 
-    const [email, setEmail] = useState('')
-    const [password, setPassword] = useState('')
-    const [username, setUsername] = useState('')
-    const {store} = useContext(Context)
+interface LoginForm { 
+  active:any, 
+  setActive:any,
+  name:string
+}
 
-    return(
-        <div>
-            
-            <input
+const LoginForm:FC<LoginForm> = ({name, active, setActive}) => { 
+
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+  const {store} = useContext(Context)
+
+  return(
+    <div className={active ? 'loginForm active' : 'loginForm'} onClick={() => setActive(false)}>
+      <div className={active ? 'loginForm_content active' : 'loginForm_content'} onClick={e => e.stopPropagation()}>
+         <h1>{name}</h1>
+          <input
             onChange={e => setEmail(e.target.value)}
             value={email}
             type="text" 
@@ -23,17 +30,10 @@ const LoginForm: FC = () => {
             type="password" 
             placeholder="Пароль"
             />
-            <input
-            onChange={e => setUsername(e.target.value)}
-            value={username}
-            type="text" 
-            placeholder="Ник пользователя"
-            />
             <button onClick={() => store.login(email, password)}>Логин</button>
-            <button onClick={() => store.logout()}>Выйти</button>
-            <button onClick={() => store.registration(email, password, username)}>Регистрация</button>
-        </div>
-    )
+      </div>
+    </div>
+  )
 }
 
-export default observer(LoginForm)
+export default LoginForm
