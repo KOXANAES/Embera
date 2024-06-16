@@ -26,7 +26,13 @@
   color: white;
   font-family: "Montserrat", sans-serif;
   font-weight: 300;
+  text-wrap: nowrap;
   letter-spacing: 1px;
   text-decoration: underline;
   font-size: 12px;
+}
+@media only screen and (max-width: 930px) {
+  #logo_decs {
+    display: none;
+  }
 }
