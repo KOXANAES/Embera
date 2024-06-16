@@ -5,10 +5,9 @@ import { Context } from '../../main'
 interface LoginForm { 
   active:any, 
   setActive:any,
-  name:string
 }
 
-const LoginForm:FC<LoginForm> = ({name, active, setActive}) => { 
+const LoginForm:FC<LoginForm> = ({active, setActive}) => { 
 
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
@@ -17,20 +16,23 @@ const LoginForm:FC<LoginForm> = ({name, active, setActive}) => {
   return(
     <div className={active ? 'loginForm active' : 'loginForm'} onClick={() => setActive(false)}>
       <div className={active ? 'loginForm_content active' : 'loginForm_content'} onClick={e => e.stopPropagation()}>
-         <h1>{name}</h1>
+       <div className="text-field__icon-2 text-field__icon-2_email">
           <input
+            className='auth_input'
             onChange={e => setEmail(e.target.value)}
             value={email}
-            type="text" 
+            type="email" 
             placeholder="Email"
             />
-            <input
-            onChange={e => setPassword(e.target.value)}
-            value={password}
-            type="password" 
-            placeholder="Пароль"
-            />
-            <button onClick={() => store.login(email, password)}>Логин</button>
+        </div>
+          <input
+          className='auth_input'
+          onChange={e => setPassword(e.target.value)}
+          value={password}
+          type="password" 
+          placeholder="Пароль"
+          />
+          <button className='login_button' onClick={() => store.login(email, password)}>Войти</button>
       </div>
     </div>
   )

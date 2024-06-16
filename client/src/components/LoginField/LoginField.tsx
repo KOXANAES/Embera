@@ -1,7 +1,8 @@
-import { FC, useContext, useState } from "react";
+import { FC, useState } from "react";
 import { observer } from "mobx-react-lite";
 import LoginForm from "../LoginForm/LoginForm";
 import RegForm from "../RegForm/RegForm";
+import './LoginField.css'
 
 const LoginField: FC = () => { 
 
@@ -9,11 +10,11 @@ const LoginField: FC = () => {
     const [regModalActive, setRegModalActive] = useState(false)
 
     return(
-        <div>
-            <button onClick={() => setLoginModalActive(true)}>ЛОГИН</button>
-            <button onClick={() => setRegModalActive(true)}>РЕГИСТРАЦИЯ</button>
-            <LoginForm name='ЛОГИН' active={loginModalActive} setActive={setLoginModalActive}/>
-            <RegForm name='РЕГИСТРАЦИЯ' active={regModalActive} setActive={setRegModalActive}/>
+        <div className="loginField">
+            <button className="authButton" onClick={() => setLoginModalActive(true)}>ЛОГИН</button>
+            <button className="authButton" onClick={() => setRegModalActive(true)}>РЕГИСТРАЦИЯ</button>
+            <LoginForm active={loginModalActive} setActive={setLoginModalActive}/>
+            <RegForm active={regModalActive} setActive={setRegModalActive}/>
         </div>
     )
 }

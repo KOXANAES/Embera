@@ -19,9 +19,13 @@
 .regForm_content { 
   padding: 20px;
   border-radius: 20px;
-  background-color: white;
-  height: 50vh;
-  width: 50vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: rgb(22, 22, 22);
+  height: fit-content;
+  width: fit-content;
   transform: scale(.5);
   transition: .4s all;
 }

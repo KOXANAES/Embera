@@ -4,7 +4,31 @@
   flex-direction: column;
   font-family: "Montserrat", sans-serif;
   font-weight: 400;
+  font-size: 12px;
+  margin: 0px 15px 
 }
 .authField { 
   display: flex;
+}
+
+.logout { 
+  display: flex;
+  align-items: center;
+}
+.logoutButton { 
+  background: transparent;
+  margin: 0px 15px;
+  border: 1px solid rgb(13,246,155);
+  color:white;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  padding: 5px 10px;
+  transition: .25s;
+}
+.logoutButton:hover { 
+  background-color:rgb(13,246,155);
+  color:black
+}
+.logoutButton:not(:hover) {
+  transition: background-color 0.5s;
 }

@@ -11,7 +11,7 @@ const AuthInfo = () => {
   if(!store.isAuth) { 
     return(
       <div className="authinfo">
-        <p>Не авторизован</p>
+        <p> &gt; Для работы сервиса необходимо авторизоваться и активировать аккаунт</p>
       </div>
     )
   }
@@ -23,8 +23,9 @@ const AuthInfo = () => {
           <p>Добро пожаловать, {store.user.username}</p>
           <p>{store.user.isActivated ? `Аккаунт активирован по почте ${store.user.email}` : `Активируйте аккаунт, иначе некоторые опции сервиса будут недоступны`}</p>
         </div>
-        <button onClick={() => store.logout()}>Выйти</button>
-
+        <div className="logout">
+          <button className="logoutButton" onClick={() => store.logout()}>Выйти</button>
+        </div>
       </div>
       
       
