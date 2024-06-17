@@ -5,24 +5,33 @@ import Logo from '../Logo/Logo'
 import AuthInfo from '../AuthInfo/AuthInfo'
 
 import { Context } from "../../main";
-import { useContext } from 'react'
+import { FC, useContext } from 'react'
 
-const HorizontalNavbar = () => { 
+interface HorizontalNavbar { 
+  active: boolean,
+  setActive: (active:boolean) => void,
+}
+
+const HorizontalNavbar:FC<HorizontalNavbar> = ({active, setActive}) => { 
 
   const {store} = useContext(Context)
 
   return(
     <div className="horizontalNavbar">
-      <Logo/>
-      <div className='navbar_right_elem'>
-      <AuthInfo/>
-      {!store.isAuth ? 
-        <LoginField/>
-            :
-        ''
-      }
+      <div className='navbar_left_elem'>
+        <Logo active={active} setActive={setActive}/>
       </div>
-      
+      <div>
+        
+      </div>
+      <div className='navbar_right_elem'>
+        <AuthInfo/>
+        {!store.isAuth ? 
+          <LoginField/>
+              :
+          ''
+        }
+      </div>
     </div>
   )
 }
