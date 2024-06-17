@@ -6,22 +6,13 @@ import './css/App.css'
 import { BrowserRouter } from "react-router-dom";
 import Menu from "./components/Menu/Menu";
 import AppRouter from "./router/AppRouter";
+import { items } from "./data/data";
 
 const App: FC = () => {
 
-    // dropright menu 
-
-  const items = [ 
-    {value:'Расчёт 1', href:'/calc1'},
-    {value:'Расчёт 2', href:'/calc2'},
-    {value:'Рас111чёт 3', href:'/calc3'},
-    {value:'Расчёт 4', href:'/calc4'},
-  ]
-  const [menuActive, setMenuActive] = useState(true)
-
-    //
-
   const {store} = useContext(Context)
+
+  const [menuActive, setMenuActive] = useState(false)
 
   useEffect(() => { 
     if(localStorage.getItem('token')) { 

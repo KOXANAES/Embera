@@ -12,7 +12,7 @@ const Logo:FC<Logo> = ({active, setActive}) => {
     <div className="logo">
       <img id='logo_img' src={logo} alt='logo' onClick={() => setActive(!active)}/>
       <div>
-        <p id='logo_name'>EMBERA</p>
+          <p id='logo_name'><a href='/'>EMBERA</a></p>
         <p id='logo_decs'>Учебный портал в сфере предупреждения и ликвидации ЧС</p>
       </div>
     </div>
