@@ -19,8 +19,8 @@ class AuthController {
     }
     async sendMail(req,res, next) { 
         try { 
-            const {email, password} = req.body 
-            const userData = await authService.sendMail(email, password)
+            const {email} = req.body 
+            const userData = await authService.sendMail(email)
             return res.json(userData)
         } catch(e) { 
             next(e)

@@ -21,9 +21,6 @@ const HorizontalNavbar:FC<HorizontalNavbar> = ({active, setActive}) => {
       <div className='navbar_left_elem'>
         <Logo active={active} setActive={setActive}/>
       </div>
-      <div>
-        
-      </div>
       <div className='navbar_right_elem'>
         <AuthInfo/>
         {!store.isAuth ? 

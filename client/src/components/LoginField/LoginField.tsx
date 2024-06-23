@@ -1,10 +1,10 @@
-import { FC, useState } from "react";
+import { useState } from "react";
 import { observer } from "mobx-react-lite";
 import LoginForm from "../LoginForm/LoginForm";
 import RegForm from "../RegForm/RegForm";
 import './LoginField.css'
 
-const LoginField: FC = () => { 
+const LoginField = () => { 
 
     const [loginModalActive, setLoginModalActive] = useState(false)
     const [regModalActive, setRegModalActive] = useState(false)

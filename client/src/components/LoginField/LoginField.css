@@ -3,8 +3,6 @@
   flex-direction: row;
   flex-wrap: nowrap;
 }
-
-
 .authButton { 
   background: transparent;
   margin: 0px 5px;

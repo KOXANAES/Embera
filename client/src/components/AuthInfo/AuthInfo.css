@@ -5,7 +5,7 @@
   font-family: "Montserrat", sans-serif;
   font-weight: 400;
   font-size: 12px;
-  margin: 0px 15px 
+  margin: 0px 15px;
 }
 .authField { 
   display: flex;
@@ -31,4 +31,14 @@
 }
 .logoutButton:not(:hover) {
   transition: background-color 0.5s;
+}
+
+#activate_btn { 
+  color: rgb(13,246,155);
+}
+#activate_btn:hover { 
+  color: rgb(27, 168, 114);
+}
+#username {
+  color: rgb(27, 168, 114);
 }

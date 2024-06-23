@@ -33,7 +33,7 @@ authRouter.put('/destroyUserFromAdm', authMiddleware, activatedMiddleware, roleM
 
 authRouter.put('/destroyUser', authMiddleware, authController.destroyUser)
 authRouter.put('/changeUsername', authMiddleware, authController.changeUsername)
-authRouter.put('/changePassword', authMiddleware, authController.changePassword)    
+authRouter.put('/changePassword', authMiddleware, authController.changePassword)
 
 
 // поменять почту 

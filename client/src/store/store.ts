@@ -76,4 +76,30 @@ export default class Store {
         }
     }
 
+    async calcTVPT1(e:any, params:any) {
+        e.preventDefault()
+        const response = await axios.post(`${API_URL}/calc/tvipg_1`, params , {headers:{'authorization': `Bearer ${localStorage.token}`}})
+        const ansField = document.querySelector('.calc1_ans')
+        ansField.innerHTML = response.data
+        console.log(response.data   )
+    }
+
+    async sendTechMessage(useremail:string , message:string) { 
+        const UserEmail = useremail
+        console.log(UserEmail)
+        const reqData = {
+            UserEmail:UserEmail, 
+            message:message
+        }
+        const response = await axios.post(`${API_URL}/tech/help`, reqData, {headers:{'authorization': `Bearer ${localStorage.token}`}})
+        alert(response.data.message)
+    }
+
+    async activate(Email:string) {
+        const email = { 
+            email:Email
+        }
+        const response = await axios.post(`${API_URL}/auth/sendMail`, email , {headers:{'authorization': `Bearer ${localStorage.token}`}})
+        alert(response.data)
+    }
 }

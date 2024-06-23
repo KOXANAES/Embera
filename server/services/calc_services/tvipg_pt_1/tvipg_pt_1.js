@@ -6,12 +6,11 @@ const tv_i_pg_pt_1 = (...params) => {
     let [N, C, H, O, M, T, P, A, Q, D, AntA, AntB, AntC] = params
     C = +C; H = +H; O = +O; M = +M; T = +T; P = +P; A = +A; Q = +Q; D = +D; AntA = +AntA; AntB = +AntB; AntC = +AntC
     calc_validator.validate_pt1(N, C, H, O, M, T, P, A, Q, D, AntA, AntB, AntC)
-
     const n_V = 1
-    const n_C = n_V * C
-    const n_H = n_V * (H / 2)
+    const n_C = +(n_V * C)
+    const n_H = +(n_V * (H / 2))
     const n_O2 = (((n_C * 2) + n_H) - O)/ 2
-    const n_N = n_O2 * 3.76
+    const n_N = +(n_O2 * 3.76).toFixed(2)
 
     const beta = n_O2 / n_V
     const Vmol = 22.4
@@ -28,7 +27,7 @@ const tv_i_pg_pt_1 = (...params) => {
     const VvTPM = +(VvTP * M).toFixed(2)
     const Vv0MA = +(Vv0M * A).toFixed(2)
     const VvTPMA = +(VvTPM * A).toFixed(2)
-
+    
     const NPGI = n_C + n_H + n_N
     let FiCO2 = +(n_C / NPGI).toFixed(3)
     let FiH2O = +(n_H / NPGI).toFixed(3)
@@ -58,7 +57,7 @@ const tv_i_pg_pt_1 = (...params) => {
 
     const DelVv0 = +(Vv0 * (A - 1)).toFixed(2)
     const Vpg0A = +(Vpg0 + DelVv0).toFixed(2)
-    const DelVvTP = +(Vpg0 * (A - 1)).toFixed(2)
+    const DelVvTP = +(VvTP * (A - 1)).toFixed(2)
     const VpgTPA = +(VpgTP + DelVvTP).toFixed(2)
 
     const Vpg0AM = +(Vpg0A * M).toFixed(2)
@@ -83,7 +82,7 @@ const tv_i_pg_pt_1 = (...params) => {
     const VH2OTPAM = +(VH2OTPA * M).toFixed(2)
     const VN2TPAM = +(VN2TPA * M).toFixed(2)
     const VO2TPAM = +(VO2TPA * M).toFixed(2)
-
+    console.log(VN2TPAM)
     const FiCO2A = +(VCO20A / Vpg0A * 100).toFixed(2)
     const FiH2OA = +(VH2O0A / Vpg0A * 100).toFixed(2)
     const FiN2A = +(VN20A / Vpg0A * 100).toFixed(2)
@@ -96,6 +95,7 @@ const tv_i_pg_pt_1 = (...params) => {
     const QobrH2O = 242.2
     const QobrCO2 = 396.9
     const Qn = +((n_C * QobrCO2 + n_H * QobrH2O) - n_V * Q).toFixed(1)
+    console.log(Qn)
     const QnMolKg = +((Qn * 1000) / MolM).toFixed(0)
     const Qsr = +(QnMolKg / Vpg0A).toFixed(2) 
 
@@ -162,6 +162,9 @@ const tv_i_pg_pt_1 = (...params) => {
     const Tvsp = findTvsp()
     const Tprpn = +((AntB / (AntA - Math.log((Fin * p0) / 100))) - AntC).toFixed(1)
     const Tprpv = +((AntB / (AntA - Math.log((Fiv * p0) / 100))) - AntC).toFixed(1)
+
+    console.log(Tvsp)
+
     return { 
         N:N, C:C, H:H, O:O, M:M, T:T, P:P, A:A, Q:Q,
         n_V:n_V, n_C:n_C, n_H:n_H, n_O2:n_O2, n_N:n_N,
@@ -214,7 +217,8 @@ const tv_i_pg_pt_1 = (...params) => {
         Tburn:Tburn, Tvzr:Tvzr,
         Pvzr:Pvzr,
         Fin:Fin, Fiv:Fiv,
-        D:D, TP:TP, Tvsp:Tvsp, Tprpn:Tprpn, Tprpv:Tprpv
+        D:D, TP:TP, Tvsp:Tvsp, Tprpn:Tprpn, Tprpv:Tprpv,
+        NPGI:NPGI, av:av, bv:bv, TP:TP, AntA:AntA, AntB:AntB, AntC:AntC
     }
 }
 

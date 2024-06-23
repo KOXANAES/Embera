@@ -7,6 +7,8 @@ import { BrowserRouter } from "react-router-dom";
 import Menu from "./components/Menu/Menu";
 import AppRouter from "./router/AppRouter";
 import { items } from "./data/data";
+import MySpinner from "./components/Spinner/Spinner";
+
 
 const App: FC = () => {
 
@@ -22,7 +24,7 @@ const App: FC = () => {
 
   if(store.isLoading) { 
     return(
-      <div>Загрузка...</div>
+      <MySpinner/>
     )
   }
 
@@ -30,7 +32,9 @@ const App: FC = () => {
     <BrowserRouter>
       <HorizontalNavbar active={menuActive} setActive={setMenuActive}/>
       {store.isAuth ? 
-        <Menu active={menuActive} setActive={setMenuActive} items={items}/>
+        <div>
+          <Menu active={menuActive} setActive={setMenuActive} items={items}/>
+        </div>
           : 
         ''
       }  

@@ -4,6 +4,7 @@ const ApiError = require('../exceptions/api-error')
 module.exports = checkIsAuth = (req) => {  
     try { 
         const authorizationHeader = req.headers.authorization
+        console.log(authorizationHeader)
         const accessToken = authorizationHeader.split(' ')[1]
         const userData = tokenService.validateAccessToken(accessToken)
         

@@ -20,7 +20,12 @@ app.use(cors({
 app.use('/auth', authRouter)
 app.use('/calc', calcRouter)
 app.use('/tech', techRouter)
+
+app.set('view engine', 'pug')
+
 app.use(errorMiddleware)
+
+
 
 const start = async () => { 
     try { 

@@ -1,4 +1,4 @@
-.loginForm { 
+.suggestForm { 
   height: 100%;
   width: 100%;
   background-color: rgba(0,0,0,.4);
@@ -12,11 +12,12 @@
   pointer-events: none;
   transition: .5s;
 }
-.loginForm.active { 
+.suggestForm.active { 
   opacity: 1;
   pointer-events: all;
 }
-.loginForm_content { 
+.suggestForm_content { 
+  max-width: 700px;
   padding: 20px;
   border-radius: 20px;
   display: flex;
@@ -29,28 +30,37 @@
   transform: scale(.5);
   transition: .4s all;
 }
-.loginForm_content.active { 
+.suggestForm_content.active { 
   transform: scale(1);
 }
 
-.auth_input { 
+.message_input { 
   margin: 10px 0px;
   padding: 15px;
-  width: 250px;
-  height: 50px;
+  width: 100%;
+  height: 150px;
   font-family: "Montserrat", sans-serif;
   background-color: transparent;
   border: none;
   color:white;
-  border-bottom: 2px solid rgb(242,114,28);
+  border-bottom: 2px solid rgb(13,246,155);
   font-weight: 480;
+  resize: none;
 }
-.auth_input:focus { 
+#tech_header_username { 
+  color: rgb(13,246,155);
+}
+ 
+.message_input:focus { 
   outline: 0;
   box-shadow:  0px 0px 0px rgb(242,114,28), 0 0 1px inset;
+} 
+
+#tech_header { 
+  color: white;
 }
 
-.login_button {
+.send_suggest_btn {
   margin: 30px; 
   width: 250px;
   height: 50px;
@@ -58,12 +68,18 @@
   font-family: "Montserrat", sans-serif;
   font-weight: 600;
   transition: .25s;
-  background-color:rgb(242,114,28);
+  background-color:rgb(13,246,155);
 
 }
-.login_button:hover {
-  background-color:rgb(255, 140, 63);
+.send_suggest_btn:hover {
+  background-color:rgb(58, 152, 116);
 }
-.login_button:not(:hover) {
+.send_suggest_btn:not(:hover) {
   transition: background-color 0.5s;
+}
+
+@media only screen and (max-width:768px) {
+  .suggestForm_content { 
+    border: 1px solid rgb(58, 152, 116);
+  }
 }

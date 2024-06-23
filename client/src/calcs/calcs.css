@@ -1,0 +1,73 @@
+.calc_container { 
+  display: grid;
+  grid-template-columns: 500px 1fr;
+  justify-items: center;
+  font-family: "Montserrat", sans-serif;
+  word-break: break-all;
+  white-space: normal;
+  overflow-wrap: break-word;
+  font-weight: 400;
+  color: white;
+  margin-top: 30px;
+}
+.calc_form { 
+  grid-column: 1;
+
+}
+.calc_form_form { 
+  text-align: end;
+  padding-right: 20px;
+  border-right: 1px solid white;
+}
+.calc1_ans { 
+  text-align: center;
+  line-height: 2;
+  grid-column: 2;
+}
+@media screen and (max-width: 768px) {
+  .calc_container {
+      grid-template-columns: 1fr; /* Одна колонка на мобильных устройствах */
+      text-align: center;
+
+  }
+
+  .calc_form {
+      grid-column: 1; /* Первая колонка */
+      grid-row: 1; /* Первая строка */
+  }
+
+  .calc1_ans {
+      grid-column: 1; /* Первая колонка */
+      grid-row: 2; /* Вторая строка */
+  }
+}
+
+.calc_input {
+  /* margin: 10px 0px; */
+  padding: 5px 0px;
+  width: 170px;
+  /* height: 50px; */
+  font-family: "Montserrat", sans-serif;
+  background-color: transparent;
+  border: none;
+  color:white;
+  border-bottom: 2px solid rgb(242,114,28);
+  font-weight: 480;
+}
+
+.sendButton { 
+  background: transparent;
+  margin: 20px 0px;
+  border: 1px solid rgb(242,114,28);
+  color:white;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  padding: 10px 15px;
+  transition: .25s;
+}
+.sendButton:hover { 
+  background-color:rgb(242,114,28);
+}
+.sendButton:not(:hover) {
+  transition: background-color 0.5s;
+}

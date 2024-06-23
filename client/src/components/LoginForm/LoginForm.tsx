@@ -3,8 +3,8 @@ import './LoginForm.css'
 import { Context } from '../../main'
 
 interface LoginForm { 
-  active:any, 
-  setActive:any,
+  active: boolean, 
+  setActive: (active:boolean) => void,
 }
 
 const LoginForm:FC<LoginForm> = ({active, setActive}) => { 
@@ -12,6 +12,7 @@ const LoginForm:FC<LoginForm> = ({active, setActive}) => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const {store} = useContext(Context)
+
 
   return(
     <div className={active ? 'loginForm active' : 'loginForm'} onClick={() => setActive(false)}>

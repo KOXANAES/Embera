@@ -1,0 +1,2562 @@
+html
+  head
+  body
+div
+    header Исходные данные:
+    p Наименование горючей жидкости: 
+      span= N
+    p Химическая формула: C
+      sub= C
+      | H
+      sub= H
+      | O
+      sub= O
+    p Количество: 
+      span= M 
+      span  кг
+    p
+      | Температура составляет 
+      span= T 
+        | <sup>0</sup>C, Давление - 
+      span= P
+      span  кПа
+    p
+      span Коэффициент избытка воздуха &alpha;<sub>в</sub> = 
+      span= A 
+div
+    header Описание физико-химических свойств вещества
+    p 
+      i информацию о веществе можно найти в справочнике Баратова:
+    p
+      i https://norm-load.ru/SNiP/raznoe/knigi/knigi/Baratov/Baratov_spravochnik_tom1/1-5.htm (Том 1)
+    p
+      i https://norm-load.ru/SNiP/raznoe/knigi/knigi/Baratov/Barztov_tom2/1-5.htm (Том 2)
+div
+    header Определение теоретического количества воздуха, необходимого для горения исследуемого вещества:
+    p Уравнение реакции горения индивидуального химического соединения в воздухе:
+    p
+      span C
+      sub
+        span= C
+      span H
+      sub
+        span= H 
+      span O
+      sub
+        span= O
+      span + 
+      span= n_O2
+      span O
+        sub 2
+      span  + 
+      span= n_N 
+        |  &middot; 3,76N
+      sub 2
+      |  = 
+      span= C 
+        | CO
+      sub 2
+      |  + 
+      span= n_H
+        | H
+      sub 2
+      | O + 
+      span= n_N 
+        |  &middot; 3,76N
+      sub 2
+    p Определение объёма воздуха, необходимого для горения 1 кг вещества при нормальных условиях:
+    p V
+      sub в
+      sup 0
+      |  = 4,76 &middot; &beta; &middot; V
+      sub 0
+      |  / M
+      sub &gcy;
+      |  = 4,76 &middot; 
+      span= beta 
+        |  &middot; 22,4 /  
+      span= MolM
+        | = 
+      span= Vv0
+        |  (м
+      sup 3
+      | /кг)
+    p Определение объёма воздуха, необходимого для горения 1 кг вещества при заданных условиях:
+    p V
+      sub в
+      sup t,p 
+      |  = p
+      sub 0
+      |  &middot; V
+      sub &vcy;
+      sup 0
+      |  &middot; T / p &middot; T
+      sub 0
+      |  = 101,325 &middot; 
+      span= Vv0  
+      |  &middot; (
+      span= T
+      span  + 273) / 
+      span= P
+      span  &middot; 273 =  
+      span= VvTP  
+      span  (м
+      sup 3
+      | /кг)
+    p Определение объёма воздуха, необходимого для горения 1 кг горючего вещества при нормальных условиях с учетом коэффициента избытка воздуха:
+    p
+      | V
+      sub в(&alpha;)
+      sup 0
+      |  = V
+      sub в
+      sup 0
+      |  &middot; &alpha;
+      sub &vcy;
+      |  = 
+      span= Vv0  
+      |  &middot; 
+      span= A  
+      |  =  
+      span= Vv0A  
+        |  (м
+        sup 3
+        | /кг)
+    p Определение объёма воздуха, необходимого для горения 1 кг горючего вещества при заданных условиях с учетом коэффициента избытка воздуха:
+    p
+      | V
+      sub в(&alpha;)
+      sup t, P
+      |  = V
+      sub &vcy;
+      sup t, P
+      |  &middot; &alpha;
+      sub &vcy;
+      |  = 
+      span= VvTP
+        | &middot; 
+      span= A 
+        | =  
+      span= VvTPA
+      span  (м
+      sup 3
+      | /кг)
+    p Определение объёма воздуха, необходимого для горения 
+      span= M
+        |   кг вещества при заданных условиях с учетом коэффициента избытка воздуха:
+    p V
+      sub в(m)
+      sup 0
+      |  = V
+      sub &vcy;
+      sup 0
+      |  &middot;
+      i m =  
+      span= Vv0   
+        |   &middot;  
+      span= M   
+        |   =   
+      span= Vv0M
+      span  (м
+      sup 3
+      | /кг)
+    p Определение объёма воздуха, необходимого для горения
+      span= M
+        | кг горючего вещества при заданных условиях:
+    p
+      | V
+      sub &vcy;(m)
+      sup t, P
+      |  = V
+      sub &vcy;
+      sup t, P
+      |  &middot; 
+      i m
+      |  = 
+      span= VvTP
+      |  &middot; 
+      span= M   
+        |   =    
+      span= VvTPM   
+      span  (м
+      sup 3
+      | /кг)
+    p Определение объема воздуха, необходимого для горения  
+      span= M   
+        |   кг горючего вещества при нормальных условиях с учетом коэффициента избытка воздуха:
+    p V
+      sub &vcy;(m, &alpha;)
+      sup 0
+      |  = V
+      sub &vcy;(m)
+      sup 0
+      |  &middot; &alpha;
+      sub &vcy;
+      |  = 
+      span= Vv0M    
+        |   &middot; 
+      span= A
+        |   =   
+      span= Vv0MA   
+        |   (&mcy;
+      sup 3
+      | /&kcy;&gcy;)
+    p Определение объема воздуха, необходимого для горения   
+      span= M    
+      |   кг горючего вещества при заданных условиях с учетом коэффициента избытка воздуха:
+    p
+      | V
+      sub &vcy;(m, &alpha;)
+      sup t, P
+      |  = V
+      sub &vcy;(m)
+      sup t, P
+      |  &middot; &alpha;
+      sub &vcy;
+      |  = 
+      span= VvTPM   
+        |   &middot;   
+      span= A  
+        |   = 
+      span= VvTPMA
+        |   (&mcy;
+      sup 3
+      | /&kcy;&gcy;)
+div
+    header Определение объема и состава продуктов, выделяющихся при горении вещества
+    p Исходя из уравнения реакции горения вещества
+     p
+      span C
+      sub
+        span= C
+      span H
+      sub
+        span= H 
+      span O
+      sub
+        span= O
+      span + 
+      span= n_O2
+      span O
+        sub 2
+      span  + 
+      span= n_N 
+        |  &middot; 3,76N
+      sub 2
+      |  = 
+      span= C 
+        | CO
+      sub 2
+      |  + 
+      span= n_H
+        | H
+      sub 2
+      | O + 
+      span= n_N 
+        |  &middot; 3,76N
+      sub 2
+    p можно определить содержание продуктов горения в единице объема:
+    p
+      | &phi;
+      sub
+        | CO
+        sub 2
+      sup 0
+      |  = n
+      sub
+        | CO
+        sub 2
+      | 
+      |       / &sum;
+      i n
+      sub
+        | &pcy;&gcy;
+        sub
+          i i
+      | 
+      |       &middot; 100% = 
+      span= n_C 
+        |   / (
+      span= n_C
+        |   + 
+      span= n_H 
+        |   + 
+      span= n_N
+        |) =  
+      span= n_C
+        |   / 
+      span= NPGI 
+        |   = 
+      span= FiCO2
+        | %;
+    p
+      | &phi;
+      sub
+        | H
+        sub 2
+        | O
+      sup 0
+      |  = n
+      sub
+        | H
+        sub 2
+        | O
+      | 
+      |       / &sum;
+      i n
+      sub
+        | &pcy;&gcy;
+        sub
+          i i
+      | 
+      |       &middot; 100% = 
+      span= n_H 
+        |   / (
+      span= n_C
+        |   + 
+      span= n_H 
+        |   + 
+      span= n_N
+        |) =  
+      span= n_H 
+        |   / 
+      span= NPGI 
+        |   = 
+      span= FiH2O 
+        | %;
+    p
+      | &phi;
+      sub
+        | N
+        sub 2
+      sup 0
+      |  = n
+      sub
+        | N
+        sub 2
+      | 
+      |       / &sum;
+      i n
+      sub
+        | &pcy;&gcy;
+        sub
+          i i
+      | 
+      |       &middot; 100% = 
+      span= n_N 
+        |   / (
+      span= n_C
+        |   + 
+      span= n_H 
+        |   + 
+      span= n_N
+        |) =  
+      span= n_N
+        |   / 
+      span= NPGI 
+        |   = 
+      span= FiN2  
+        | %;
+    p Определение объема продуктов горения для 1 кг вещества при нормальных условиях:
+    p
+      | V
+      sub &pcy;&gcy;
+      sup 0
+      |  = &sum;n
+      sub
+        | &pcy;&gcy;
+        sub i
+      | 
+      |       &middot; V
+      sub 0
+      |  / n
+      sub &gcy;
+      |  &middot; M
+      sub &gcy;
+      |  = ((
+      span= n_C
+        |   + 
+      span= n_H
+        |   +   
+      span= n_O2
+        |   &middot; 3,76) &middot; 22,4 ) / (
+      span= n_V
+        |   &middot; 
+      span= MolM
+        | ) = 
+      span= Vpg0
+        |   (&mcy;
+      sup 3
+      | /&kcy;&gcy;).
+    p Определение объема продуктов горения для 1 кг вещества при заданных условиях:
+    p
+      | V
+      sub &pcy;&gcy;
+      sup t, P
+      |  = (p
+      sub 0
+      |  &middot; V
+      sub &pcy;&gcy;
+      sup 0
+      |  &middot; T) / p &middot; T
+      sub 0
+      |  = (101,325 &middot; 
+      span= Vpg0
+      |   &middot;
+      | (
+      span= T
+      |   + 273 )) / (
+      span= P
+      |   &middot; 273) = 
+      span= VpgTP
+      |   (&mcy;
+      sup 3
+      | /&kcy;&gcy;).
+    p Определение объемов компонентов продуктов горения для 1 кг вещества при нормальных условиях:
+    p
+      | V
+      sub
+        | CO
+        sub 2
+      sup 0
+      |  = V
+      sub &pcy;&gcy;
+      sup 0
+      |  &middot; &phi;
+      sub
+        | CO
+        sub 2
+      sup 0 
+      |   = 
+      span= Vpg0
+      |   &middot; 
+      span= FiCO2
+      | % = 
+      span= VCO20 
+      |   (&mcy;
+      sup 3
+      | /&kcy;&gcy;).
+    p
+      | V
+      sub
+        | H
+        sub 2
+        | O
+      sup 0
+      |  = V
+      sub &pcy;&gcy;
+      sup 0
+      |  &middot; &phi;
+      sub
+        | H
+        sub 2
+        | O
+      sup 0
+      |  =  
+      span= Vpg0  
+      |   &middot; 
+      span= FiH2O 
+      | % = 
+      span= VH2O0 
+      |   (&mcy;
+      sup 3
+      | /&kcy;&gcy;).
+    p
+      | V
+      sub
+        | N
+        sub 2
+      sup 0
+      |  = V
+      sub &pcy;&gcy;
+      sup 0
+      |  &middot; &phi;
+      sub
+        | N
+        sub 2
+      sup 0
+      |  =  
+      span= Vpg0
+      |   &middot; 
+      span= FiN2
+      | % = 
+      span= VN20  
+      |   (&mcy;
+      sup 3
+      | /&kcy;&gcy;).
+    p Определение объемов компонентов продуктов горения для 1 кг вещества при заданных условиях:
+    p
+      | V
+      sub
+        | CO
+        sub 2
+      sup t, P
+      |  = V
+      sub &pcy;&gcy;
+      sup t, P
+      |  &middot; &phi;
+      sub
+        | CO
+        sub 2
+      sup 0
+      |  =  
+      span= VpgTP 
+      |   &middot; 
+      span= FiCO2
+      | % = 
+      span= VCO2TP
+      |   (&mcy;
+      sup 3
+      | /&kcy;&gcy;).
+    p
+      | V
+      sub
+        | CO
+        sub 2
+      sup t, P
+      |  = V
+      sub &pcy;&gcy;
+      sup t, P
+      |  &middot; &phi;
+      sub
+        | CO
+        sub 2
+      sup 0
+      |  =  
+      span= VpgTP
+      |   &middot; 
+      span= FiH2O
+      | % = 
+      span= VH2OTP
+      |   (&mcy;
+      sup 3
+      | /&kcy;&gcy;).
+    p
+      | V
+      sub
+        | CO
+        sub 2
+      sup t, P
+      |  = V
+      sub &pcy;&gcy;
+      sup t, P
+      |  &middot; &phi;
+      sub
+        | CO
+        sub 2
+      sup 0
+      |  =  
+      span= VpgTP 
+      |   &middot; 
+      span= FiN2
+      | % = 
+      span= VN2TP
+      |   (&mcy;
+      sup 3
+      | /&kcy;&gcy;).
+    p Определение объема продуктов горения для 
+      span= M
+        |  кг вещества при нормальных условиях:
+    p
+      | V
+      sub
+        | &pcy;&gcy;(
+        i m
+        | )
+      sup 0
+      |  = V
+      sub &pcy;&gcy;
+      sup 0
+      |  &middot; 
+      i m
+      |  =  
+      span= Vpg0
+      |   &middot; 
+      span= M
+      |   = 
+      span= Vpg0M
+      |   &mcy;
+      sup 3
+      | .
+    p Определение объема продуктов горения для 
+      span= M 
+        |   кг вещества при заданных условиях:
+    p
+      | V
+      sub
+        | &pcy;&gcy;(
+        i m
+        | )
+      sup 0
+      |  = V
+      sub &pcy;&gcy;
+      sup 0
+      |  &middot; 
+      i m
+      |  =  
+      span= Vpg0
+      |   &middot; 
+      span= M 
+      |  = 
+      span= VpgTPM
+      |   &mcy;
+      sup 3
+      | .
+    p Определение объемов компонентов продуктов горения для 
+      span= M 
+        |   кг вещества при нормальных условиях:
+    p
+      | V
+      sub
+        | CO
+        sub 2
+        | (m)
+      sup 0
+      |  = V
+      sub
+        | CO
+        sub 2
+      sup 0
+      |   &middot; m = 
+      span= VCO20
+      |   &middot; 
+      span= M
+      |   = 
+      span= VCO20M
+      |   &mcy;
+      sup 3
+      | .
+    p
+      | V
+      sub
+        | H
+        sub 2
+        | O(m)
+      sup 0
+      |  =V
+      sub
+        | H
+        sub 2
+        | O
+      sup 0
+      |  &middot; m = 
+      span= VH2O0
+      |   &middot; 
+      span= M 
+      |   =  
+      span= VH2O0M
+      |   &mcy;
+      sup 3
+      | .
+    p
+      | V
+      sub
+        | N
+        sub 2
+        | (m)
+      sup 0
+      |  = V
+      sub
+        | N
+        sub 2
+      sup 0
+      |  &middot; m = 
+      span= VN20
+      |   &middot; 
+      span= M
+      |   = 
+      span= VN20M 
+      |   &mcy;
+      sup 3
+      | .
+    p
+      | Определение объемов компонентов продуктов горения для 
+      span= M 
+        |   кг вещества при заданных условиях:
+    p
+      | V
+      sub
+        | CO
+        sub 2
+        | (m)
+      sup t, P
+      |  = V
+      sub
+        | CO
+        sub 2
+      sup t, P
+      |  &middot; m = 
+      span= VCO2TP
+      |   &middot; 
+      span= M
+      |   = 
+      span= VCO2TPM
+      |   (&mcy;
+      sup 3
+      | /&kcy;&gcy;).
+    p
+      | V
+      sub
+        | H
+        sub 2
+        | O(m)
+      sup t, P
+      |  =V
+      sub
+        | H
+        sub 2
+        | O
+      sup t, P
+      |  &middot; m =
+      span= VH2OTP
+      |   &middot; 
+      span= M
+      |   = 
+      span= VH2OTPM
+      |   (&mcy;
+      sup 3
+      | /&kcy;&gcy;).
+    p
+      | V
+      sub
+        | N
+        sub 2
+        | (m)
+      sup t, P
+      |  = V
+      sub
+        | N
+        sub 2
+      sup t, P
+      |  &middot; m = 
+      span= VN2TP
+      |   &middot; 
+      span= M 
+      |   = 
+      span= VN2TPM
+      |   (&mcy;
+      sup 3
+      | /&kcy;&gcy;).
+    p Определение объема продуктов горения для 1 кг вещества при нормальных условиях с учетом коэффициента избытка воздуха:
+    p
+      | &Delta;V
+      sub &vcy;
+      sup 0
+      |  = V
+      sub &vcy;
+      sup 0
+      |  &middot; (&alpha;
+      sub &vcy;
+      |  - 1) = 
+      span= Vv0 
+      |   &middot; (
+      span= A 
+      |   - 1) =  
+      span= DelVv0
+        |   (&mcy;
+        sup 3
+        | /&kcy;&gcy;).
+    p
+      | V
+      sub &pcy;&gcy;(&alpha;)
+      sup 0
+      |  = V
+      sub &pcy;&gcy;
+      sup 0
+      |  + &Delta;V
+      sub &vcy;
+      sup 0
+      |   =  
+      span= Vpg0
+      |   + 
+      span= DelVv0  
+      |   =  
+      span= Vpg0A
+        |   (&mcy;
+      sup 3
+      | /&kcy;&gcy;).
+    p Определение объема продуктов горения для 1 кг вещества при заданных условиях с учетом коэффициента избытка воздуха:
+    p
+      | &Delta;V
+      sub &vcy;
+      sup t, P
+      |  = V
+      sub &vcy;
+      sup t, P
+      |  &middot; (&alpha;
+      sub &vcy;
+      |   - 1) =  
+      span= VvTP
+      |   &middot; (
+      span= A
+      |   - 1) = 
+      span= DelVvTP 
+      |   (&mcy;
+      sup 3
+      | /&kcy;&gcy;).
+    p
+      | V
+      sub &pcy;&gcy;(&alpha;)
+      sup t, P
+      |  = V
+      sub &pcy;&gcy;
+      sup t, P
+      |  + &Delta;V
+      sub &vcy;
+      sup 0
+      |  =  
+      span= VpgTP
+      |   + 
+      span= DelVvTP
+      |   = 
+      span= VpgTPA
+      |   (&mcy;
+      sup 3
+      | /&kcy;&gcy;).
+    p Определение объема продуктов горения для 
+      span= M
+        | кг вещества при нормальных условиях с учетом коэффициента избытка воздуха:
+    p
+      | V
+      sub &pcy;&gcy;(&alpha;, m)
+      sup 0
+      |  = V  
+      sub &pcy;&gcy;(&alpha;)
+      sup 0
+      |   &middot; m =  
+      span= Vpg0A
+      |   &middot; 
+      span= M
+      |  =   
+      span= Vpg0AM
+      |   &mcy;
+      sup 3
+    p Определение объема продуктов горения для 
+      span= M
+        | кг вещества при заданных условиях с учетом коэффициента избытка воздуха:
+    p
+      | V
+      sub &pcy;&gcy;(&alpha;, m)
+      sup t, P
+      |  = V
+      sub &pcy;&gcy;(&alpha;)
+      sup t, P
+      |  &middot; m = 
+      span= VpgTPA
+      |   &middot; 
+      span= M
+      |   = 
+      span= VpgTPAM
+      |   &mcy;
+      sup 3
+    p Определение объемов компонентов продуктов горения для 1 кг вещества при нормальных условиях с учетом коэффициента избытка воздуха:
+    p
+      | V
+      sub
+        | CO
+        sub 2
+        | (&alpha;)
+      sup 0
+      |  = V
+      sub
+        | CO
+        sub 2
+      sup 0
+      |  = 
+      span= VCO20
+      |   (&mcy;
+      sup 3
+      | /&kcy;&gcy;).
+    p
+      | V
+      sub
+        | H
+        sub 2
+        | O(&alpha;)
+      sup 0
+      |  = V
+      sub
+        | H
+        sub 2
+        | O
+      sup 0
+      |   = 
+      span= VH2O0
+      |   (&mcy;
+      sup 3
+      | /&kcy;&gcy;).
+    p
+      | V
+      sub
+      | N
+      sub 2
+      | (&alpha;)
+      sup 0
+      |  = 0,79 &middot; &Delta;V
+      sub &vcy;
+      sup 0
+      |  =  
+      span= VN20
+      |   + 0,79 &middot; 
+      span= DelVv0
+      |   = 
+      span= VN20A
+      |  (&mcy;
+      sup 3
+      | /&kcy;&gcy;).
+    p
+      | V
+      sub
+        | O
+        sub 2
+        | (&alpha;)
+      sup 0
+      |  = 0,21 * &Delta;V
+      sub &vcy;
+      sup 0
+      |  = 0,21 &middot; 
+      span= DelVv0
+      |   =   
+      span= VO20A
+      |   (&mcy;
+      sup 3
+      | /&kcy;&gcy;).
+    p Определение объемов компонентов продуктов горения для 1 кг вещества при заданных условиях с учетом коэффициента избытка воздуха:
+    p
+      | V
+      sub
+      | CO
+      sub 2
+      | (&alpha;)
+      sup t, P
+      |  = V
+      sub
+        | CO
+        sub 2
+      sup t, P
+      |   =   
+      span= VCO2TP
+      |  (&mcy;
+      sup 3
+      | /&kcy;&gcy;).
+    p
+      | V
+      sub
+        | H
+        sub 2
+        | O(&alpha;)
+      sup t, P
+      |  = V
+      sub
+        | H
+        sub 2
+        | O
+      sup t, P
+      |  = 
+      span= VH2OTP
+        |   (&mcy;
+        sup 3
+        | /&kcy;&gcy;).
+    p
+      | V
+      sub
+        | N
+        sub 2
+        | (&alpha;)
+      sup t, P
+      |  = 0,79 &middot; &Delta;V
+      sub &vcy;
+      sup t, P
+      |    =  
+      span= VN2TP
+        | + 0,79 &middot; 
+      span= DelVvTP
+        |  =  
+        span= VN2TPA
+          |   (&mcy;
+          sup 3
+          | /&kcy;&gcy;).
+    p
+      | V
+      sub
+        | O
+        sub 2
+        | (&alpha;)
+      sup t, P
+      |  = 0,21 &middot; &Delta;V
+      sub &vcy;
+      sup 0
+      |  = 0,21 &middot; 
+      span= DelVvTP
+        |   = 
+        span= VO2TPA
+          |   (&mcy;
+          sup 3
+          | /&kcy;&gcy;).
+    p Определение объемов компонентов продуктов горения для 
+      span= M 
+        |   кг вещества при нормальных условиях с учетом коэффициента избытка воздуха:
+    p
+      | V
+      sub
+        | CO
+        sub 2
+        | (&alpha;, m)
+      sup 0
+      |  = V
+      sub
+        | CO
+        sub 2
+      sup 0
+      |  &middot; m = 
+      span= VCO20
+        |   &middot; 
+        span= M
+          |   = 
+          span= VCO20AM
+            |  (&mcy;
+            sup 3
+            | /&kcy;&gcy;).
+    p
+      | V
+      sub
+        | H
+        sub 2
+        | O(&alpha;, m)
+      sup 0
+      |  = V
+      sub
+        | H
+        sub 2
+        | O
+      sup 0
+      |  &middot; m = 
+      span= VH2O0
+        |   &middot; 
+        span= M
+          |   = 
+          span= VH2O0AM
+            |   (&mcy;
+            sup 3
+            | /&kcy;&gcy;).
+    p
+      | V
+      sub
+        | N
+        sub 2
+        | (&alpha;, m)
+      sup 0
+      |  = V
+      sub
+        | N
+        sub 2
+        | (&alpha;)
+      sup 0
+      |  &middot; m =
+      span= VN20A
+        |   &middot; 
+        span= M
+          |   = 
+          span= VN20AM
+            |   (&mcy;
+            sup 3
+            | /&kcy;&gcy;).
+    p
+      | V
+      sub
+        | O
+        sub 2
+        | (&alpha;, m)
+      sup 0
+      |  = V
+      sub
+        | O
+        sub 2
+        | (&alpha;)
+      sup 0
+      |  &middot; m = 
+      span= VO20A
+        |   &middot; 
+        span= M
+          |   = 
+          span= VO20AM
+            |   (&mcy;
+            sup 3
+            | /&kcy;&gcy;).
+    p
+      | Определение объемов компонентов продуктов горения для 
+      span= M   
+        |   кг вещества при заданных условиях с учетом коэффициента избытка воздуха:
+    p
+      | V
+      sub
+        | CO
+        sub 2
+        | (&alpha;, m)
+      sup t, P
+      |  = V
+      sub
+        | CO
+        sub 2
+      sup t, P
+      |  &middot; m = 
+      span= VCO2TP
+        |   &middot; 
+        span= M
+          |  = 
+          span= VCO2TPAM
+            |   (&mcy;
+            sup 3
+            | /&kcy;&gcy;).
+    p
+      | V
+      sub
+        | H
+        sub 2
+        | O(&alpha;, m)
+      sup t, P
+      |  = V
+      sub
+        | H
+        sub 2
+        | O
+      sup t, P
+      |   &middot; m =  
+      span= VH2OTP
+        |   &middot; 
+        span= M 
+          |  = 
+          span= VH2OTPAM
+            |   (&mcy;
+            sup 3
+            | /&kcy;&gcy;).
+    p
+      | V
+      sub
+        | N
+        sub 2
+        | (&alpha;, m)
+      sup t, P
+      |  = V
+      sub
+        | N
+        sub 2
+        | (&alpha;)
+      sup t, P
+      |  &middot; m = 
+      span= VN2TPA
+        |   &middot; 
+        span= M 
+          |   = 
+          span= VN2TPAM
+            |   (&mcy;
+            sup 3
+            | /&kcy;&gcy;).
+    p
+      | V
+      sub
+        | O
+        sub 2
+        | (&alpha;, m)
+      sup t, P
+      |  = V
+      sub
+        | O
+        sub 2
+        | (&alpha;)
+      sup t, P
+      |   &middot; m =  
+      span= VO2TPA
+        |   &middot; 
+        span= M
+          |  = 
+          span= VO2TPAM
+            |   (&mcy;
+            sup 3
+            | /&kcy;&gcy;).
+    p
+      | &Ocy;&pcy;&rcy;&iecy;&dcy;&iecy;&lcy;&iecy;&ncy;&icy;&iecy; &scy;&ocy;&dcy;&iecy;&rcy;&zhcy;&acy;&ncy;&icy;&yacy; (% &ocy;&bcy;.) &kcy;&ocy;&mcy;&pcy;&ocy;&ncy;&iecy;&ncy;&tcy;&ocy;&vcy; &pcy;&rcy;&ocy;&dcy;&ucy;&kcy;&tcy;&ocy;&vcy; &gcy;&ocy;&rcy;&iecy;&ncy;&icy;&yacy; &scy; &ucy;&chcy;&iecy;&tcy;&ocy;&mcy;
+      | &kcy;&ocy;&ecy;&fcy;&fcy;&icy;&tscy;&icy;&iecy;&ncy;&tcy;&acy; &icy;&zcy;&bcy;&ycy;&tcy;&kcy;&acy; &vcy;&ocy;&zcy;&dcy;&ucy;&khcy;&acy;:
+    p
+      | &phi;
+      sub
+        | CO
+        sub 2
+        | (&alpha;)
+      |       = V
+      sub
+        | CO
+        sub 2
+        | (&alpha;)
+      sup 0
+      |  / &sum;V
+      sub &pcy;&gcy;(&alpha;)
+      sup 0
+      |  &middot; 100% =  
+      span= VCO20
+        |   / 
+        span= Vpg0A
+          |  &middot; 100% =  
+          span= FiCO2A
+            |   %;
+    p
+      | &phi;
+      sub
+        | H
+        sub 2
+        | O(&alpha;)
+      |       = V
+      sub
+        | H
+        sub 2
+        | O(&alpha;)
+      sup 0
+      |  / &sum;V
+      sub &pcy;&gcy;(&alpha;)
+      sup 0
+      |  &middot; 100% =  
+      span= VH2O0
+        |   / 
+        span= Vpg0A
+          |  &middot; 100% =  
+          span= FiH2OA
+            |   %;
+    p
+      | &phi;
+      sub
+        | N
+        sub 2
+        | O(&alpha;)
+      |       = V
+      sub
+        | N
+        sub 2
+        | (&alpha;)
+      sup 0
+      |  / &sum;V
+      sub &pcy;&gcy;(&alpha;)
+      sup 0
+      |  &middot; 100% =  
+      span= VN20A
+        |   / 
+        span= Vpg0A
+          |  &middot; 100% =  
+          span= FiN2A
+            |   %;
+    p
+      | &phi;
+      sub
+        | O
+        sub 2
+        | O(&alpha;)
+      | {&quot; &quot;}
+      |       = V
+      sub
+        | O
+        sub 2
+        | (&alpha;)
+      sup 0
+      |  / &sum;V
+      sub &pcy;&gcy;(&alpha;)
+      sup 0
+      |  &middot; 100% =  
+      span= VO20A
+        |   / 
+        span= Vpg0A
+          |   &middot; 100% = 
+          span= FiO2A 
+            |   % 
+    p Определение содержания (% об.) компонентов продуктов горения с учетом коэффициента избытка воздуха в заданных условиях:
+    p
+      |  &phi;
+      sub
+        | CO
+        sub 2
+        | (&amp;#945)
+      |  = V
+      sub
+        | CO
+        sub 2
+        | (&amp;#945)
+      sup t, P
+      |  / &amp;#8721V
+      sub &pcy;&gcy;(&amp;#945)
+      sup t, P
+      |  &amp;#183 100% =
+      span#VCO2TP_5
+      |  / 
+      span#VpgTPA_3
+      |  &amp;#183 100% = 
+      span#FiCO2TPA
+      |  %;
+    p
+      | &amp;#966
+      sub
+        | H
+        sub 2
+        | O(&amp;#945)
+      |  = V
+      sub
+        | H
+        sub 2
+        | O(&amp;#945)
+      sup t, P
+      |  / &amp;#8721V
+      sub &pcy;&gcy;(&amp;#945)
+      sup t, P
+      |  &amp;#183 100% =
+      span#VH2OTP_5
+      |  / 
+      span#VpgTPA_4
+      |  &amp;#183 100% = 
+      span#FiH2OTPA
+      |  %;
+    p
+      | &amp;#966
+      sub
+        | N
+        sub 2
+        | O(&amp;#945)
+      |  = V
+      sub
+        | N
+        sub 2
+        | (&amp;#945)
+      sup t, P
+      |  / &amp;#8721V
+      sub &pcy;&gcy;(&amp;#945)
+      sup t, P
+      |  &amp;#183 100% =
+      span#VN2TPA_3
+      |  / 
+      span#VpgTPA_5
+      |  &amp;#183 100% = 
+      span#FiN2TPA
+      |  %;
+    p
+      | &amp;#966
+      sub
+        | O
+        sub 2
+        | O(&amp;#945)
+      |  = V
+      sub
+        | O
+        sub 2
+        | (&amp;#945)
+      sup t, P
+      |  / &amp;#8721V
+      sub &pcy;&gcy;(&amp;#945)
+      sup t, P
+      |  &amp;#183 100% =
+      span#VO2TPA_3
+      |  / 
+      span#VpgTPA_6
+      |  &amp;#183 100% = 
+      span#FiO2TPA
+      |  %
+    table
+      thead Таблица 1
+      caption Теоретическое количество воздуха, необходимого для горения вещества. Объем и состав продуктов горения при нормальных условиях 
+      tbody
+        tr
+          td(rowspan='{2}') № п/п
+          td(rowspan='{2}') Показатель, размеры
+          td(colspan='{2}') индивидуальное химическое содержание  
+        tr
+          td
+            | &alpha;
+            sub &vcy;
+            |  = 1
+          td
+            | &alpha;
+            sub &vcy;
+            |  = 
+            span= A
+        tr
+          td 1
+          td 2
+          td 3
+          td 4
+        tr
+          td 1.
+          td
+            | V
+            sub &vcy;
+            sup 0
+            | , &mcy;
+            sup 3
+            | /&kcy;&gcy;
+          td
+            span= Vv0
+          td
+            span= Vv0A
+        tr
+          td 2.
+          td
+            | V
+            sub &vcy;
+            sup t, P
+            | , &mcy;
+            sup 3
+            | /&kcy;&gcy;
+          td
+            span= VvTP
+          td
+            span= VvTPA
+        tr
+          td 3.
+          td
+            | V
+            sub &vcy;(m)
+            sup 0
+            | , &mcy;
+            sup 3
+            | /&kcy;&gcy;
+          td
+            span= Vv0M
+          td
+            span= Vv0MA
+        tr
+          td 4.
+          td
+            | V
+            sub &vcy;(m)
+            sup t, P
+            | , &mcy;
+            sup 3
+            | /&kcy;&gcy;
+          td
+            span= VvTPM
+          td
+            span= VvTPMA
+        tr
+          td 5.
+          td
+            | V
+            sub &pcy;&gcy;
+            sup 0
+            | , &mcy;
+            sup 3
+            | /&kcy;&gcy;
+          td
+            span= Vpg0
+          td
+            span= Vpg0A
+        tr
+          td 6.
+          td
+            | V
+            sub &pcy;&gcy;
+            sup t, P
+            | , &mcy;
+            sup 3
+            | /&kcy;&gcy;
+          td
+            span= VpgTP
+          td
+            span= VpgTPA
+        tr
+          td 7.
+          td
+            | V
+            sub
+              | CO
+              sub 2
+            sup 0
+            | , &mcy;
+            sup 3
+            | /&kcy;&gcy;
+          td
+            span= VCO20
+          td
+            span= VCO20
+        tr
+          td 8.
+          td
+            | V
+            sub
+              | CO
+              sub 2
+            sup t, P
+            | , &mcy;
+            sup 3
+            | /&kcy;&gcy;
+          td
+            span= VCO2TP
+          td
+            span= VCO2TP
+        tr
+          td 9.
+          td
+            | V
+            sub
+              | H
+              sub 2
+              | O
+            sup 0
+            | , &mcy;
+            sup 3
+            | /&kcy;&gcy;
+          td
+            span= VH2O0
+          td
+            span= VH2O0
+        tr
+          td 10.
+          td
+            | V
+            sub
+              | H
+              sub 2
+              | O
+            sup t, P
+            | , &mcy;
+            sup 3
+            | /&kcy;&gcy;
+          td
+            span= VH2OTP
+          td
+            span= VH2OTP
+        tr
+          td 11.
+          td
+            | V
+            sub
+              | N
+              sub 2
+            sup 0
+            | , &mcy;
+            sup 3
+            | /&kcy;&gcy;
+          td
+            span= VN20
+          td
+            span= VN20A
+        tr
+          td 12.
+          td
+            | V
+            sub
+              | N
+              sub 2
+            sup t, P
+            | , &mcy;
+            sup 3
+            | /&kcy;&gcy;
+          td
+            span= VN2TP
+          td
+            span= VN2TPA
+        tr
+          td 13.
+          td
+            | V
+            sub
+              | O
+              sub 2
+            sup 0
+            | , &mcy;
+            sup 3
+            | /&kcy;&gcy;
+          td &ndash;
+          td
+            span= VO20A
+        tr
+          td 14.
+          td
+            | V
+            sub
+              | O
+              sub 2
+            sup t, P
+            | , &mcy;
+            sup 3
+            | /&kcy;&gcy;
+          td &ndash;
+          td
+            span= VO2TPA
+        tr
+          td 15.
+          td
+            | V
+            sub &pcy;&gcy;(m)
+            sup 0
+            | , &mcy;
+            sup 3
+          td
+            span= Vpg0M
+          td
+            span= Vpg0AM
+        tr
+          td 16.
+          td
+            | V
+            sub &pcy;&gcy;(m)
+            sup t, P
+            | , &mcy;
+            sup 3
+          td
+            span= VpgTPM
+          td
+            span= VpgTPAM
+        tr
+          td 17.
+          td
+            | V
+            sub
+              | H
+              sub 2
+              | O(m)
+            sup 0
+            | , &mcy;
+            sup 3
+          td
+            span= VH2O0M
+          td
+            span= VH2O0AM
+        tr
+          td 18.
+          td
+            | V
+            sub
+              | H
+              sub 2
+              | O(m)
+            sup t, P
+            | , &mcy;
+            sup 3
+          td
+            span= VH2OTPM
+          td
+            span= VH2OTPAM
+        tr
+          td 19.
+          td
+            | V
+            sub
+              | CO
+              sub 2
+              | (m)
+            sup 0
+            | , &mcy;
+            sup 3
+          td
+            span= VCO20M
+          td
+            span= VCO20AM
+        tr
+          td 20.
+          td
+            | V
+            sub
+              | CO
+              sub 2
+              | (m)
+            sup t, P
+            | , &mcy;
+            sup 3
+          td
+            span= VCO2TPM
+          td
+            span= VCO2TPAM
+        tr
+          td 21.
+          td
+            | V
+            sub
+              | N
+              sub 2
+              | (m)
+            sup 0
+            | , &mcy;
+            sup 3
+          td
+            span= VN20M
+          td
+            span= VN20AM
+        tr
+          td 22.
+          td
+            | V
+            sub
+              | N
+              sub 2
+              | (m)
+            sup t, P
+            | , &mcy;
+            sup 3
+          td
+            span= VN2TPM
+          td
+            span= VN2TPAM
+        tr
+          td 23.
+          td
+            | V
+            sub
+              | O
+              sub 2
+              | (m)
+            sup 0
+            | , &mcy;
+            sup 3
+          td &ndash;
+          td
+            span= VO20AM
+        tr
+          td 24.
+          td
+            | V
+            sub
+              | O
+              sub 2
+              | (m)
+            sup t, P
+            | , &mcy;
+            sup 3
+          td &ndash;
+          td
+            span= VO2TPAM
+        tr
+          td 25.
+          td
+            | &phi;
+            sub
+              | CO
+              sub 2
+            |             , %
+          td
+            span= FiCO2
+          td
+            span= FiCO2A
+        tr
+          td 26.
+          td
+            | &phi;
+            sub
+              | H
+              sub 2
+              | O
+            |             , %
+          td
+            span= FiH2O
+          td
+            span= FiH2OA
+        tr
+          td 27.
+          td
+            | &phi;
+            sub
+              | N
+              sub 2
+            |             , %
+          td
+            span= FiN2
+          td
+            span= FiN2A
+        tr
+          td 28.
+          td
+            | &phi;
+            sub
+              | O
+              sub 2
+            |             , %
+          td &ndash;
+          td
+            span= FiO2A
+div
+    header Определение теплоты сгорания вещества
+    p В соответствии с уравнением реакции горения вещества определяем Qн по закону Гесса:
+      sub &ncy;
+      |  &pcy;&ocy; &zcy;&acy;&kcy;&ocy;&ncy;&ucy; &Gcy;.&Icy;. &Gcy;&iecy;&scy;&scy;&acy; &vcy; &scy;&ocy;&ocy;&tcy;&vcy;&iecy;&tcy;&scy;&tcy;&vcy;&icy;&icy; &scy; &fcy;&ocy;&rcy;&mcy;&ucy;&lcy;&ocy;&jcy; (1.11):
+    p
+      span C
+      sub
+        span= C
+      span H
+      sub
+        span= H 
+      span O
+      sub
+        span= O
+      span + 
+      span= n_O2
+      span O
+        sub 2
+      span  + 
+      span= n_N 
+        |  &middot; 3,76N
+      sub 2
+      |  = 
+      span= C 
+        | CO
+      sub 2
+      |  + 
+      span= n_H
+        | H
+      sub 2
+      | O + 
+      span= n_N 
+        |  &middot; 3,76N
+      sub 2
+    p
+      | Q
+      sub &ncy;
+      |  = 
+      span= kCO2_6
+        | Q
+        sup 0
+        sub &ocy;&bcy;&rcy;.CO2
+        |  + 
+        span= kH2O_5
+          | Q
+          sup 0
+          sub &ocy;&bcy;&rcy;.H2O(&pcy;)
+          |  -  
+          span= kSub_2
+            | Q
+            sup 0
+            sub
+              | &ocy;&bcy;&rcy;.C
+              sub
+                span= C
+              |         H
+              sub
+                span= H
+              | O
+              sub
+                span= O 
+              span= O_text_10
+    p Исходя из заданных условий:
+    p
+      | Q
+      sup 0
+      sub
+        | &ocy;&bcy;&rcy;.C
+        sub
+          span= C
+        |         H
+        sub
+          span= H
+        //- span= O_text_11
+        | O
+        sub
+          span= O
+      |       =
+      span= Q 
+        |   &kcy;&Dcy;&zhcy;/&mcy;&ocy;&lcy;&softcy;; Q
+        sup 0
+        sub
+          | &ocy;&bcy;&rcy;.CO
+          sub 2
+        |       = 396,9 &kcy;&Dcy;&zhcy;/&mcy;&ocy;&lcy;&softcy;; Q
+        sup 0
+        sub
+          | &ocy;&bcy;&rcy;.H
+          sub 2
+          | O
+        |       = 242,2 &kcy;&Dcy;&zhcy;/&mcy;&ocy;&lcy;&softcy;
+    p
+      | Q
+      sub &ncy; = 
+      span= n_C 
+        |   &middot; 396,9 + 
+        span= n_H 
+          |   &middot;
+          | 242,2 - 
+          span= Q
+            | &middot; 
+            span= Q_sub_2
+              | = 
+              span= Qn  
+                |   &kcy;&Dcy;&zhcy;/&mcy;&ocy;&lcy;&softcy; = 
+                span= QnMolKg 
+                  |   &kcy;&Dcy;&zhcy;/&kcy;&gcy;.
+div
+    header Определение адиабатической температуры горения вещества
+    p Определяем среднее теплосодержание продуктов горения заданного вещества
+    p
+      | Q
+      sub &scy;&rcy;
+      |  = Q
+      sub &ncy;
+      |  / V
+      sup 0
+      sub &pcy;&gcy;(&alpha;)
+      |  = 
+      span= Qn
+        |   / 
+        span= Vpg0A
+          |  =
+          span= Qsr 
+            |  &kcy;&Dcy;&zhcy;/&mcy;
+            sup 3
+    p  Определяем теплосодержание продуктов горения при соответствующих температурах. Методом линейной интерполяции определим, что температура горения вещества равна 
+      span= Tburn 
+        sup 0
+      span C
+    //- p
+    //-   | Q
+    //-   sup
+    //-     | t
+    //-   sub &pcy;&gcy;
+    //-   |  = V
+    //-   sup 0
+    //-   sub
+    //-     | CO
+    //-     sub 2
+    //-   |       &middot; Q
+    //-   sub
+    //-     | CO
+    //-     sub 2
+    //-   |       + V
+    //-   sup 0
+    //-   sub
+    //-     | H
+    //-     sub 2
+    //-     | O
+    //-   |       &middot; Q
+    //-   sub
+    //-     | H
+    //-     sub 2
+    //-     | 0
+    //-   |       + V
+    //-   sup 0
+    //-   sub
+    //-     | N
+    //-     sub 2(&alpha;)
+    //-   |       &middot; Q
+    //-   sub
+    //-     | N
+    //-     sub 2
+    //-   |       + V
+    //-   sup 0
+    //-   sub
+    //-     | O
+    //-     sub 2(&alpha;)
+    //-   |       &middot; Q
+    //-   sub
+    //-     | O
+    //-     sub 2
+    //- p
+    //-   | Q
+    //-   sup
+    //-     span= Tm
+    //-   sub &pcy;&gcy;
+    //-   |  = (
+    //-   span= VCO20 
+    //-     |   &middot; 
+    //-     span= QCO2
+    //-       | +
+    //-       span= VH2O0_8
+    //-         | &middot; 
+    //-         span= QH2O
+    //-           | +
+    //-           span= VN20A
+    //-             | &middot; 
+    //-             span= QN2
+    //-               | + 
+    //-               span= VO20A_5
+    //-                 | &middot;
+    //-                 span= QO2
+    //-                   | ) &middot; 10
+    //-                   sup 2
+    //-                   |  =
+    //-                   span= QpgTm
+    //-                     | &kcy;&Dcy;&zhcy;/&kcy;&gcy;.
+//-     p
+//-       | &Tcy;&acy;&kcy; &kcy;&acy;&kcy; Q
+//-       sup
+//-         span#Tm_2
+//-       sub &pcy;&gcy;
+//-       |  &lt; Q
+//-       sub &ncy;
+//-       | , &tcy;&ocy; &pcy;&rcy;&icy;&ncy;&icy;&mcy;&acy;&iecy;&mcy; t
+//-       sub 2
+//-       |  &gt; t
+//-       sub 1
+//-       | .
+//-     p &Ncy;&acy;&khcy;&ocy;&dcy;&icy;&mcy; &tcy;&iecy;&pcy;&lcy;&ocy;&scy;&ocy;&dcy;&iecy;&rcy;&zhcy;&acy;&ncy;&icy;&iecy; &pcy;&rcy;&ocy;&dcy;&ucy;&kcy;&tcy;&ocy;&vcy; &gcy;&ocy;&rcy;&iecy;&ncy;&icy;&yacy; &pcy;&rcy;&icy; &dcy;&acy;&ncy;&ncy;&ocy;&jcy; &tcy;&iecy;&mcy;&pcy;&iecy;&rcy;&acy;&tcy;&ucy;&rcy;&iecy;:
+//-     p
+//-       | Q
+//-       sup
+//-         span#Tb
+//-       sub &pcy;&gcy;
+//-       |  = (
+//-       span#VCO20_9
+//-         | &middot; 
+//-         span#QCO2_2
+//-           | +{&quot; &quot;}
+//-           span#VH2O0_9
+//-             | &middot; 
+//-             span#QH2O_2
+//-               | +
+//-               span#VN20A_7
+//-                 | &middot; 
+//-                 span#QN2_2
+//-                   | + 
+//-                   span#VO20A_6
+//-                     | &middot;{&quot; &quot;}
+//-                     span#QO2_2
+//-                       | ) &middot; 10
+//-                       sup 2
+//-                       |  =
+//-                       span#QpgTb
+//-                         | &kcy;&Dcy;&zhcy;/&kcy;&gcy;.
+//-     p
+//-       | &Tcy;&acy;&kcy; &kcy;&acy;&kcy; Q
+//-       sup
+//-         span#Tm_3
+//-       sub &pcy;&gcy;
+//-       |  &lt; Q
+//-       sub &ncy;
+//-       |  &lt; Q
+//-       sup
+//-         span#Tb_2
+//-       |       , &tcy;&iecy;&mcy;&pcy;&iecy;&rcy;&acy;&tcy;&ucy;&rcy;&ucy; &gcy;&ocy;&rcy;&iecy;&ncy;&icy;&yacy; &ocy;&pcy;&rcy;&iecy;&dcy;&iecy;&lcy;&yacy;&iecy;&mcy; &pcy;&ocy; &mcy;&iecy;&tcy;&ocy;&dcy;&ucy; &lcy;&icy;&ncy;&iecy;&jcy;&ncy;&ocy;&jcy; &icy;&ncy;&tcy;&iecy;&rcy;&pcy;&ocy;&lcy;&yacy;&tscy;&icy;&icy;:
+//-     p
+//-       | t
+//-       sub &gcy;&ocy;&rcy;.
+//-       |  = t
+//-       sub 1
+//-       |  + ((t
+//-       sub 2
+//-       |  - t
+//-       sub 1
+//-       | ) &middot; (Q
+//-       sub &ncy;
+//-       |  - Q
+//-       sup
+//-         | t
+//-         sub 1
+//-       sub &pcy;&gcy;
+//-       | )) / ( Q
+//-       sup
+//-         | t
+//-         sub 2
+//-       sub &pcy;&gcy;
+//-       |  - Q
+//-       sup
+//-         | t
+//-         sub 1
+//-       sub &pcy;&gcy;
+//-       |  ) =
+//-       span#Tm_4
+//-         | + (( 
+//-         span#Tb_3
+//-           | - 
+//-           span#Tm_5
+//-             | ) &middot; (
+//-             span#Qnkg_2
+//-               | - 
+//-               span#QpgTM_2
+//-                 | )) / ( 
+//-                 span#QpgTb_2
+//-                   | - 
+//-                   span#QpgTM_3
+//-                     | ) ={&quot; &quot;}
+//-                     span#Tburn
+//-                       sup 0
+//-                       | C. 
+div
+    header Определение температуры и максимального давления взрыва парогазовой смеси:
+    p в соответствии с методикой расчета Q <sub>взр</sub> = Q<sub>н</sub> = 
+      span= Qsr 
+      span  кДж/моль
+    p Методом последовательных приближений, по аналогии с нахождением адиабатической температуры горения вещества, определяем температуру взрыва парогазовой смеси 
+      span= N
+      |  с воздухом. Так, температура взрыва заданного вещества t<sub>взр</sub> = 
+      span= Tvzr  
+        sup 0
+      span C
+    p Максимальное давление взрыва при этом составит p<sub>взр</sub> =
+      span= Pvzr  
+      |   кПа
+//-       |  &ap; Q
+//-       sub &ncy;
+//-       |  ={&quot; &quot;}
+//-       span#Qn_3
+//-         | &kcy;&Dcy;&zhcy;/&mcy;&ocy;&lcy;&softcy;.
+//-     p
+//-       | &Mcy;&iecy;&tcy;&ocy;&dcy;&ocy;&mcy; &pcy;&ocy;&scy;&lcy;&iecy;&dcy;&ocy;&vcy;&acy;&tcy;&iecy;&lcy;&softcy;&ncy;&ycy;&khcy; &pcy;&rcy;&icy;&bcy;&lcy;&icy;&zhcy;&iecy;&ncy;&icy;&jcy;, &pcy;&ocy; &acy;&ncy;&acy;&lcy;&ocy;&gcy;&icy;&icy; &scy; &ncy;&acy;&khcy;&ocy;&zhcy;&dcy;&iecy;&ncy;&icy;&iecy;&mcy;
+//-       | &acy;&dcy;&icy;&acy;&bcy;&acy;&tcy;&icy;&chcy;&iecy;&scy;&kcy;&ocy;&jcy; &tcy;&iecy;&mcy;&pcy;&iecy;&rcy;&acy;&tcy;&ucy;&rcy;&ycy; &gcy;&ocy;&rcy;&iecy;&ncy;&icy;&yacy; &vcy;&iecy;&shchcy;&iecy;&scy;&tcy;&vcy;&acy;, &ocy;&pcy;&rcy;&iecy;&dcy;&iecy;&lcy;&yacy;&iecy;&mcy; &tcy;&iecy;&mcy;&pcy;&iecy;&rcy;&acy;&tcy;&ucy;&rcy;&ucy; &vcy;&zcy;&rcy;&ycy;&vcy;&acy;
+//-       | &pcy;&acy;&rcy;&ocy;&gcy;&acy;&zcy;&ocy;&vcy;&ocy;&jcy; &scy;&mcy;&iecy;&scy;&icy; &icy;&scy;&khcy;&ocy;&dcy;&ncy;&ocy;&gcy;&ocy; &vcy;&iecy;&shchcy;&iecy;&scy;&tcy;&vcy;&acy; &scy; &vcy;&ocy;&zcy;&dcy;&ucy;&khcy;&ocy;&mcy;.
+//-     p
+//-       | &Zcy;&acy;&dcy;&acy;&iocy;&mcy;&scy;&yacy; &pcy;&iecy;&rcy;&vcy;&ocy;&jcy; &tcy;&iecy;&mcy;&pcy;&iecy;&rcy;&acy;&tcy;&ucy;&rcy;&ocy;&jcy; (t
+//-       sub 1
+//-       |  = 
+//-       sup 0
+//-       | C) &icy; &scy;
+//-       |       &icy;&scy;&pcy;&ocy;&lcy;&softcy;&zcy;&ocy;&vcy;&acy;&ncy;&icy;&iecy;&mcy; &tcy;&acy;&bcy;&lcy;&icy;&tscy;&ycy; 4 &pcy;&rcy;&icy;&lcy;&ocy;&zhcy;&iecy;&ncy;&icy;&yacy; 2 &pcy;&ocy; &fcy;&ocy;&rcy;&mcy;&ucy;&lcy;&iecy; (1.22) &ncy;&acy;&khcy;&ocy;&dcy;&icy;&mcy;:
+//-     p
+//-       | Q
+//-       sup
+//-         span#Tvzrm
+//-       sub &vcy;&zcy;&rcy;.
+//-       |  = &sum;(n
+//-       sub
+//-         | &pcy;&gcy;
+//-         sub i
+//-       | {&quot; &quot;}
+//-       |       &middot; U
+//-       sub
+//-         | &pcy;&gcy;
+//-         sub i
+//-       |       ) = n
+//-       sub
+//-         | CO
+//-         sub 2
+//-       | {&quot; &quot;}
+//-       |       &middot; U
+//-       sub
+//-         | CO
+//-         sub 2
+//-       | {&quot; &quot;}
+//-       |       + n
+//-       sub
+//-         | H
+//-         sub 2
+//-         | O
+//-       | {&quot; &quot;}
+//-       |       &middot; U
+//-       sub
+//-         | H
+//-         sub 2
+//-         | O
+//-       | {&quot; &quot;}
+//-       |       + n
+//-       sub
+//-         | N
+//-         sub 2
+//-       | {&quot; &quot;}
+//-       |       &middot; U
+//-       sub
+//-         | N
+//-         sub 2
+//-       | {&quot; &quot;}
+//-       |       =
+//-       span#kCO2_8
+//-         | &middot; 
+//-         span#UCO2m
+//-           | + 
+//-           span#kH2O_7
+//-             | &middot;{&quot; &quot;}
+//-             span#UH2Om
+//-               | +
+//-               span#kN2_2
+//-                 | &middot; 
+//-                 span#UN2m
+//-                   | = 
+//-                   span#Qvzrm
+//-                     | &kcy;&Dcy;&zhcy;/&mcy;&ocy;&lcy;&softcy;.
+//-     p
+//-       | &Pcy;&ocy;&scy;&kcy;&ocy;&lcy;&softcy;&kcy;&ucy; Q
+//-       sup
+//-         span#Tvzrm_2
+//-       sub &vcy;&zcy;&rcy;
+//-       |  &lt; Q
+//-       sub &ncy;
+//-       | , &vcy;&ycy;&bcy;&icy;&rcy;&acy;&iecy;&mcy; t
+//-       sub 2
+//-       |  ={&quot; &quot;}
+//-       span#Tvzrb_2
+//-         sup 0
+//-         | C.
+//-     p &Pcy;&ocy; &acy;&ncy;&acy;&lcy;&ocy;&gcy;&icy;&icy; &ncy;&acy;&khcy;&ocy;&dcy;&icy;&mcy; &ecy;&ncy;&iecy;&rcy;&gcy;&icy;&yucy; &vcy;&zcy;&rcy;&ycy;&vcy;&acy; &pcy;&rcy;&icy; &ecy;&tcy;&ocy;&jcy; &tcy;&iecy;&mcy;&pcy;&iecy;&rcy;&acy;&tcy;&ucy;&rcy;&iecy;:
+//-     p
+//-       | Q
+//-       sup
+//-         span#Tvzrb_3
+//-       sub &vcy;&zcy;&rcy;
+//-       |  =
+//-       span#kCO2_9
+//-         | &middot; 
+//-         span#UCO2b
+//-           | + 
+//-           span#kH2O_8
+//-             | &middot;{&quot; &quot;}
+//-             span#UH2Ob
+//-               | +
+//-               span#kN2_3
+//-                 | &middot; 
+//-                 span#UN2b
+//-                   | = 
+//-                   span#Qvzrb
+//-                     | &kcy;&Dcy;&zhcy;/&mcy;&ocy;&lcy;&softcy;.
+//-     p
+//-       | Q
+//-       sup
+//-         span#Tvzrm_3
+//-       | {&quot; &quot;}
+//-       |       &lt; Q
+//-       sub &ncy;
+//-       |  &lt; Q
+//-       sup
+//-         span#Tvzrb_4
+//-       sub &pcy;&gcy;
+//-       | .
+//-     p &Lcy;&icy;&ncy;&iecy;&jcy;&ncy;&ocy;&jcy; &icy;&ncy;&tcy;&iecy;&rcy;&pcy;&ocy;&lcy;&yacy;&tscy;&icy;&iecy;&jcy; &ncy;&acy;&khcy;&ocy;&dcy;&icy;&mcy; &tcy;&iecy;&mcy;&pcy;&iecy;&rcy;&acy;&tcy;&ucy;&rcy;&ucy; &vcy;&zcy;&rcy;&ycy;&vcy;&acy; &pcy;&acy;&rcy;&ocy;&gcy;&acy;&zcy;&ocy;&vcy;&ocy;&jcy; &scy;&mcy;&iecy;&scy;&icy;:
+//-     p
+//-       | t
+//-       sub &vcy;&zcy;&rcy;
+//-       |  = t
+//-       sub 1
+//-       |  + ((t
+//-       sub 2
+//-       |  - t
+//-       sub 1
+//-       | ) &middot; (Q
+//-       sub &ncy;
+//-       |  - Q
+//-       sup
+//-         | t
+//-         sub 1
+//-       sub &vcy;&zcy;&rcy;
+//-       | )) / (Q
+//-       sup
+//-         | t
+//-         sub 2
+//-       | {&quot; &quot;}
+//-       |       - Q
+//-       sup
+//-         | t
+//-         sub 1
+//-       sub &vcy;&zcy;&rcy;
+//-       | ) =
+//-       span#Tvzrm_4
+//-         | + ((
+//-         span#Tvzrb_5
+//-           | - 
+//-           span#Tvzrm_5
+//-             | ) &middot; (
+//-             span#Qn_4
+//-               | -{&quot; &quot;}
+//-               span#Qvzrm_2
+//-                 | )) / (
+//-                 span#Qvzrb_2
+//-                   | - 
+//-                   span#Qvzrm_3
+//-                     | ) ={&quot; &quot;}
+//-                     span#Tburst
+//-                       sup 0
+//-                       | C.
+//-     p &Pcy;&ocy; &fcy;&ocy;&rcy;&mcy;&ucy;&lcy;&iecy; (1.23) &ocy;&pcy;&rcy;&iecy;&dcy;&iecy;&lcy;&yacy;&iecy;&mcy; &mcy;&acy;&kcy;&scy;&icy;&mcy;&acy;&lcy;&softcy;&ncy;&ocy;&iecy; &dcy;&acy;&vcy;&lcy;&iecy;&ncy;&icy;&iecy; &vcy;&zcy;&rcy;&ycy;&vcy;&acy;:
+//-     p
+//-       | p
+//-       sub &vcy;&zcy;&rcy;
+//-       |  = (p
+//-       sub 0
+//-       |  &middot; T
+//-       sub &vcy;&zcy;&rcy;
+//-       |  &middot; &sum;m
+//-       sub i
+//-       | ) / (T
+//-       sub 0
+//-       |  &middot; &sum;n
+//-       sub j
+//-       | ) = (101,325 &middot; (
+//-       span#Tburst_2
+//-         | + 273)
+//-         | &middot; (
+//-         span#kCO2_10
+//-           | + 
+//-           span#kH2O_9
+//-             | + 
+//-             span#kN2_5
+//-               | &middot;
+//-               | 3.76)) / (273 &middot; (
+//-               span#kSub_4
+//-                 | + 
+//-                 span#kO2_4
+//-                   | +{&quot; &quot;}
+//-                   span#kN2_4
+//-                     | &middot; 3.76)) = 
+//-                     span#Pvzr
+//-                       | &kcy;&Pcy;&acy;.
+div
+    header Определение концентрационных пределов распространения пламени горючей жидкости
+    p На основании уравнения реакции горения вещества и с использованием аппроксимационной формулы рассчитываем нижний и верхний концентрационные пределы распространения пламени:
+    p
+      | &phi;
+      sub &ncy;
+      |  = 100 / ( 8,684 &middot; 
+      span= n_O2  
+        |   + 4,679 ) = 
+        span= Fin
+          | %;
+    p
+      | &phi;
+      sub &vcy;
+      |  = 100 / ( 
+      span= av
+        |   &middot; 
+        span= n_O2  
+          |   + 
+          span= bv
+            | ) = 
+            span= Fiv
+              | %;
+div
+    header Определение температуры вспышки и температурных пределов распространения пламени горючей жидкости
+    p Температуру вспышки паров горючей жидкости в закрытом тигле определим из уравнения Блинова:
+    p
+      | T
+      sub &vcy;&scy;&pcy;
+      |  = B
+      sub &pcy;&rcy;
+      |  / (p
+      sub &vcy;&scy;&pcy;
+      |  &middot; D
+      sub 0
+      |  &middot; n
+      sub
+        | O
+        sub 2
+      | )
+    p
+      | T
+      sub &vcy;&scy;&pcy;
+      |  &middot; p
+      sub &vcy;&scy;&pcy;
+      |  = 28 / (
+      span= D 
+        |   &middot;  
+        span= n_O2
+          | ) = 
+          span= TP
+            |  K &middot; кПа
+    p Определим р по уравнению Антуана: 
+    p
+      i
+        | p = 10
+        sup
+          | A - (B / (t + C
+          sub a
+          | ))
+    p
+      | &gcy;&dcy;&iecy; &Acy; = 
+      span= AntA
+        | ; B = 
+        span= AntB
+          | ; &Scy; = 
+          span= AntC
+            |   постоянные Л.Ш. Антуана для   
+            span= N
+              | .
+    p Так, температура вспышки, согласно методике расчета, составит T<sub>всп</sub> = 
+      span= Tvsp
+        sup 0
+      span C
+//-     p
+//-       | &Vcy;&ycy;&bcy;&icy;&rcy;&acy;&iecy;&mcy; &tcy;&iecy;&mcy;&pcy;&iecy;&rcy;&acy;&tcy;&ucy;&rcy;&ucy; t
+//-       sub 1
+//-       |  = 
+//-       span#t_1
+//-         sup 0
+//-         | C (T
+//-         sub 1
+//-         |  = 
+//-         span#t_1K
+//-           | K):
+//-     p
+//-       | p
+//-       sub 1
+//-       |  = 10
+//-       sup
+//-         span#Ant_A_2
+//-           | - ( 
+//-           span#Ant_B_2
+//-             | / ( 
+//-             span#t_1_2
+//-               | {&quot; &quot;}
+//-               | + 
+//-               span#Ant_C_2
+//-                 | ))
+//-       | {&quot; &quot;}
+//-       |       =
+//-       span#pm1000
+//-         | &kcy;&Pcy;&acy; = 
+//-         span#pm
+//-           | &Pcy;&acy;;
+//-     p
+//-       | T
+//-       sub 1
+//-       | p
+//-       sub 1
+//-       |  = 
+//-       span#t_1K_2
+//-         | &middot; 
+//-         span#pm_2
+//-           | ={&quot; &quot;}
+//-           span#T1P1
+//-             | K &middot; &Pcy;&acy;;
+//-     p
+//-       | T
+//-       sub 1
+//-       | p
+//-       sub 1
+//-       |  &lt; T
+//-       sub &vcy;&scy;&pcy;
+//-       | p
+//-       sub &vcy;&scy;&pcy;
+//-       | .
+//-     p
+//-       | &Vcy;&ycy;&bcy;&icy;&rcy;&acy;&iecy;&mcy; t
+//-       sub 2
+//-       |  = 
+//-       span#t_2
+//-         sup 0
+//-         | C (T
+//-         sub 2
+//-         |  = 
+//-         span#t_2K
+//-           | K):
+//-     p
+//-       | p
+//-       sub 2
+//-       |  = 10
+//-       sup
+//-         span#Ant_A_3
+//-           | - ( 
+//-           span#Ant_B_3
+//-             | / ( 
+//-             span#t_2_2
+//-               | {&quot; &quot;}
+//-               | + 
+//-               span#Ant_C_3
+//-                 | ))
+//-       | {&quot; &quot;}
+//-       |       =
+//-       span#pb1000_2
+//-         | &kcy;&Pcy;&acy; = 
+//-         span#pb_2
+//-           | &Pcy;&acy;;
+//-     p
+//-       | T
+//-       sub 2
+//-       | p
+//-       sub 2
+//-       |  = 
+//-       span#t_2K_2
+//-         | &middot; 
+//-         span#pb_3
+//-           | ={&quot; &quot;}
+//-           span#T2P2
+//-             | K &middot; &Pcy;&acy;;
+//-     p
+//-       | &Tcy;&acy;&kcy; &kcy;&acy;&kcy; T
+//-       sub 1
+//-       | &middot;p
+//-       sub 1
+//-       |  &lt; T
+//-       sub &vcy;&scy;&pcy;
+//-       | &middot;p
+//-       sub &vcy;&scy;&pcy;
+//-       | {&quot; &quot;}
+//-       |       &lt; T
+//-       sub 2
+//-       | &middot;p
+//-       sub 2
+//-       | , &tcy;&ocy; &mcy;&iecy;&tcy;&ocy;&dcy;&ocy;&mcy; &lcy;&icy;&ncy;&iecy;&jcy;&ncy;&ocy;&jcy; &icy;&ncy;&tcy;&iecy;&rcy;&pcy;&ocy;&lcy;&yacy;&tscy;&icy;&icy;
+//-       |       &ocy;&pcy;&rcy;&iecy;&dcy;&iecy;&lcy;&yacy;&iecy;&mcy; T
+//-       sub &vcy;&scy;&pcy;
+//-       | :
+//-     p
+//-       | T
+//-       sub &vcy;&scy;&pcy;
+//-       |  = T
+//-       sub 1
+//-       |  + ((T
+//-       sub 2
+//-       |  - T
+//-       sub 1
+//-       | )&middot;(T
+//-       sub &vcy;&scy;&pcy;
+//-       | &middot;p
+//-       sub &vcy;&scy;&pcy;
+//-       |  - T
+//-       sub 1
+//-       | &middot;p
+//-       sub 1
+//-       | )) / ( T
+//-       sub 2
+//-       | &middot;p
+//-       sub 2
+//-       |  - T
+//-       sub 1
+//-       | p
+//-       sub 1
+//-       |  );
+//-     p
+//-       | T
+//-       sub &vcy;&scy;&pcy;
+//-       |  = 
+//-       span#t_1_3
+//-         | + ((
+//-         span#t_2_3
+//-           | - 
+//-           span#t_1_4
+//-             | )(
+//-             span#TvspPvsp_2
+//-               | - 
+//-               span#T1P1_2
+//-                 | )) / (
+//-                 span#T2P2_2
+//-                   | - 
+//-                   span#T1P1_3
+//-                     | ) = 
+//-                     span#Tvsp
+//-                       | K
+//-                       | = 
+//-                       span#tvsp_in_C
+//-                         sup 0
+//-                         sub C
+//-                         | .
+p  Определение температурных пределов распространения пламени проведем с использованием уравнения Антуана
+    p
+      | t
+      sub &ncy;(&vcy;)
+      |  = (B / (A - lg((&phi;
+      sub &ncy;(&vcy;)
+      |  &middot; p
+      sub 0
+      | )/100)))
+      |       - C
+      sub a
+      | ;
+    p
+      | t
+      sub &ncy;
+      |  = (
+      span= AntB
+        | / (
+        span= AntA
+          | - lg(
+          span= Fin
+            |   &middot; 
+            span= P
+              | ) / 100)) - 
+              span= AntC
+                |  = 
+                span= Tprpn
+                  sup   0
+                  | C;
+    p
+      | t
+      sub &ncy;
+      |  = (
+      span= AntB
+        |  / (
+        span= AntA
+          |   - lg(
+          span= Fiv
+            |  &middot; 
+            span= P
+              |   ) / 100)) -
+              span= AntC
+                |   =   
+                span= Tprpv 
+                  sup  0
+                  | C.

@@ -2,12 +2,12 @@ import { FC, useContext, useState } from 'react'
 import './RegForm.css'
 import { Context } from '../../main'
 
-interface RegForm { 
-  active:any, 
-  setActive:any,
+interface RegFormProps { 
+  active:boolean, 
+  setActive:(value: boolean) => void,
 }
 
-const RegForm:FC<RegForm> = ({active, setActive}) => { 
+const RegForm:FC<RegFormProps> = ({active, setActive}) => { 
 
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
