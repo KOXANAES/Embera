@@ -4,6 +4,7 @@ import { useContext, useState } from "react"
 import './AuthInfo.css'
 import logo_img from '../../assets/fire.png'
 import ActivateModal from "../ActivateModal/ActivateModal"
+import { Navigate } from "react-router-dom"
 
 const AuthInfo = () => { 
 
@@ -14,6 +15,7 @@ const AuthInfo = () => {
     return(
       <div className="authinfo">
         <p> &gt; Для работы сервиса необходимо авторизоваться и активировать аккаунт</p>
+        <Navigate to="/" replace={true} />
       </div>
     )
   }

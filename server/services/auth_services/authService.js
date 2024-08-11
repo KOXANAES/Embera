@@ -53,6 +53,7 @@ class AuthService {
         const user = await User.findOne({where:{email:email}})
         if(!user) { 
             throw ApiError.BadRequest('Пользователь с таким email не найден')
+            // return('test')
         }
         const isPassEquals = await bcrypt.compare(password, user.password)
         if(!isPassEquals) { 

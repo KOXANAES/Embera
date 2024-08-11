@@ -32,3 +32,8 @@
 .regForm_content.active { 
   transform: scale(1);
 }
+#pswd_info { 
+  font-family: "Montserrat", sans-serif;
+  font-weight: 450;
+  color: white;
+}

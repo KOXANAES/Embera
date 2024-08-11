@@ -11,6 +11,9 @@ const roleMiddleware = require('../middleware/roleMiddleware')
 const authRouter = new Router()
 
 authRouter.post('/registration', 
+    body('email').notEmpty(),
+    body('password').notEmpty(),
+    body('username').notEmpty(),
     body('password').isLength({min:4, max:32}),
     authController.registration)
 authRouter.post('/login', authController.login)

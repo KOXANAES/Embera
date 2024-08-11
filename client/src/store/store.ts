@@ -28,6 +28,14 @@ export default class Store {
 
     async login(email:string,password:string) { 
         try { 
+            if(!email) { 
+                alert(`Поле "email" является обязательным`)
+                return
+            }
+            if(!password) { 
+                alert(`Поле "password" является обязательным`)
+                return
+            }
             const response = await AuthService.login(email, password)
             console.log(response)
             localStorage.setItem('token', response.data.accessToken)
@@ -35,17 +43,31 @@ export default class Store {
             this.setUser(response.data.user)
         } catch(e) { 
             console.log(e)
+            alert('Неверный логин либо пароль!')
         }
     }
 
     async registration(email:string,password:string,username:string) { 
         try { 
+            if(!email) { 
+                alert(`Поле "email" является обязательным`)
+                return
+            }
+            if(!password) { 
+                alert(`Поле "password" является обязательным`)
+                return
+            }
+            if(!username) { 
+                alert(`Поле "username" является обязательным`)
+                return
+            }
             const response = await AuthService.registration(email, password, username)
             localStorage.setItem('token', response.data.accessToken)
             this.setAuth(true)
             this.setUser(response.data.user)
         } catch(e) { 
-            console.log(e)
+            // console.log(e)
+            alert(e.response.data.message)
         }
     }
 
@@ -74,14 +96,6 @@ export default class Store {
         } finally { 
             this.setIsLoading(false)
         }
-    }
-
-    async calcTVPT1(e:any, params:any) {
-        e.preventDefault()
-        const response = await axios.post(`${API_URL}/calc/tvipg_1`, params , {headers:{'authorization': `Bearer ${localStorage.token}`}})
-        const ansField = document.querySelector('.calc1_ans')
-        ansField.innerHTML = response.data
-        console.log(response.data   )
     }
 
     async sendTechMessage(useremail:string , message:string) { 

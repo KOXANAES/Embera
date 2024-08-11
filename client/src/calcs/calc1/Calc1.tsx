@@ -4,8 +4,8 @@ import '../calcs.css'
 
 const Calc1 = () => { 
 
-  const {store} = useContext(Context)
-
+  const {calcStore} = useContext(Context)
+  
   const [N, setN] = useState('')
   const [C, setC] = useState('')
   const [H, setH] = useState('')
@@ -42,14 +42,12 @@ const Calc1 = () => {
           <p>A:<br/><input className='calc_input' value={AA} onChange={e => setAA(e.target.value)} maxLength={8} id='AA'/></p>  
           <p>B:<br/><input className='calc_input' value={AB} onChange={e => setAB(e.target.value)} maxLength={8} id='AB'/></p>
           <p>C:<br/><input className='calc_input' value={AC} onChange={e => setAC(e.target.value)} maxLength={8} id='AC'/></p>
-          <p><button className='sendButton' onClick={(e) => store.calcTVPT1(e, params)}>Отправить</button></p>
+          <p><button className='sendButton' onClick={(e) => calcStore.calcTVPT1(e, params)}>Отправить</button></p>
         </form>
       </div>
       <div id='text' className='calc1_ans'>
-        1234
-          <p>123</p>
+        ...Ваше решение появится в этом поле при отправке формы...
       </div>
-      <p><button className='sendButton' onClick={(e) => store.calcTVPT1(e, params)}>Отправить</button></p>
     </div>
   )
 }
